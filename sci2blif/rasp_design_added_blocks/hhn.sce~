@@ -1,0 +1,5 @@
+style.displayedLabel="hhn"
+
+style.displayedLabel="<table> <tr> <td align=left><b>Vin<br> E<sub>Na</sub><br>E<sub>K</sub><br>Vref</b></td> <td></td> <td></td> <td> Hodgkin<br> Huxley<br> Neuron</td> <td></td> <td></td> <td align=right><b>V<sub>mem</sub></b></td> </tr> </table>";
+
+pal5=xcosPalAddBlock(pal5,"hhn",[],style);
