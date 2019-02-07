@@ -533,7 +533,7 @@ function up1_callback()
         unix_s('cd; sudo chown ubuntu:ubuntu rasp30/ -R');
         unix_s('cd; svn update rasp30');
     end
-    messagebox(["RASP Tools is updated." "Scilab will now close for the changes to take effect in RASP Tools." "Please restart RASP Tools."],"Update Complete!" , "info", "modal");
+    messagebox(["RASP Tools is updated to woodjamesdee repo." "Scilab will now close for the changes to take effect in RASP Tools." "Please restart RASP Tools."],"Update Complete!" , "info", "modal");
     sleep(1000);
     quit;
 endfunction
@@ -543,12 +543,12 @@ function up2_callback()
     messagebox(["Once you press OK, RASP Tools will reset itself." "Please wait for the reset confirmation message to appear."],"Reset to Begin" , "info", "modal");
     if(path ~= "") then
         unix_s('cd; sudo chown ubuntu:ubuntu rasp30/ -R');
-        unix_s('cd; rm ~/rasp30 -rf; svn co https://github.com/jhasler/rasp30/trunk ~/rasp30/; cd '+path);
+        unix_s('cd; rm ~/rasp30 -rf; svn co https://github.com/woodjamesdee/rasp30/trunk ~/rasp30/; cd '+path);
     else
         unix_s('cd; sudo chown ubuntu:ubuntu rasp30/ -R');
-        unix_s('cd; rm ~/rasp30 -rf; svn co https://github.com/jhasler/rasp30/trunk ~/rasp30/');
+        unix_s('cd; rm ~/rasp30 -rf; svn co https://github.com/woodjamesdee/rasp30/trunk ~/rasp30/');
     end
-    messagebox(["RASP Tools has been reset." "Scilab will now close for the changes to take effect in RASP Tools." "Please restart RASP Tools."],"Reset Complete!" , "info", "modal");
+    messagebox(["RASP Tools has been reset to woodjamesdee repo." "Scilab will now close for the changes to take effect in RASP Tools." "Please restart RASP Tools."],"Reset Complete!" , "info", "modal");
     sleep(1000);
     quit;
 endfunction
