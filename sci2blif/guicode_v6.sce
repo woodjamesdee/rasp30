@@ -514,7 +514,7 @@ function demo_example_callback(demo_fname,com_prep_index,arb_msg_index)
     unix_g("mkdir /home/ubuntu/RASP_Workspace/demo_examples/");
     unix_g("mkdir /home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname);
     unix_s("cp /home/ubuntu/rasp30/sci2blif/demo_examples/"+demo_fname+".xcos /home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/");
-    file_name= '/home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/"+demo_fname+".xcos'; disp(demo_fname); disp(file_name);
+    file_name= "/home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/"+demo_fname+".xcos"; disp(demo_fname); disp(file_name);
     [path,fname,extension]=fileparts(file_name);
     cd(path);
     filebrowser();
