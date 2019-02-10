@@ -52,6 +52,7 @@ xcosPalAdd(pal11,["FPAA" "Macro-block Generation"]);
 funcprot(previousprot); //Turn the warning messages back on to be displayed in consold
 
 // Launching the GUI
+mprintf("Launching the GUI");
 exec('/home/ubuntu/rasp30/sci2blif/guicode_v6.sce',-1);
 exec('/home/ubuntu/rasp30/sci2blif/caps4dgn.sce',-1);
 cd('/home/ubuntu/RASP_Workspace');
