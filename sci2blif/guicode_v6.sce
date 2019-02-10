@@ -264,7 +264,7 @@ function Program_Design_callback(handles)
             close(winH);
             filebrowser();
         end
-    else messagebox(["You do not have a ' + fname+ '.swcs file in the current directory." "Please create one by compiling a design or netlist."], "No Switch List Detected", "warning");
+    else messagebox(["You do not have a " + fname+ ".swcs file in the current directory." "Please create one by compiling a design or netlist."], "No Switch List Detected", "warning");
     end
 endfunction
 
