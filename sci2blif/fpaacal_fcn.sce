@@ -43,7 +43,7 @@ function Step_1_callback()
     messagebox('Before pressing OK, please make the connections as shown in Configuration A.',"Diode ADC Setup", "info", ["OK"], "modal");
     // diode ADC
     exec("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_diodeADC_cal.sce",-1); //get hex measurements for diode ADC
-    unix_w("cp data_diodeADC_ivdd25V ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_diodeADC/data_diodeADC_chip"+chip_num+brdtype+"_ivdd25V');
+    unix_w("cp data_diodeADC_ivdd25V ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_diodeADC/data_diodeADC_chip"+chip_num+brdtype+"_ivdd25V");
     exec("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_diodeADC.sce",-1); // Call Diode ADC polifit function for six reference currents
     disp('Step 1 is complete!');
 endfunction
@@ -58,7 +58,7 @@ function Step_2_callback()
     messagebox('Before pressing OK, please make the connections as shown in Configuration B.',"Drain DAC Setup", "info", ["OK"], "modal");
     // drain DAC
     exec("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_drainDAC_cal.sce",-1); //get voltage measurements for drain DAC codes
-    unix_w("cp data_drainDAC_ivdd60V ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_drainDAC/data_drainDAC_chip"+chip_num+brdtype+"_ivdd60V');
+    unix_w("cp data_drainDAC_ivdd60V ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_drainDAC/data_drainDAC_chip"+chip_num+brdtype+"_ivdd60V");
     exec("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_drainDAC.sce",-1); // Call Drain DAC polifit function for matrix of reference drain dac voltages to get the voltage codes
     unix_w("cp Vd_table_30mV ~/rasp30/prog_assembly/libs/chip_parameters/Vd_table/Vd_table_30mV_chip"+chip_num+brdtype);
     disp('Step 2 is complete!');
@@ -74,11 +74,11 @@ function Step_3_callback()
     messagebox('Before pressing OK, please make the connections as shown in Configuration C.',"Gate DAC Setup", "info", ["OK"], "modal");
     // gate DAC
     exec("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC_cal.sce",-1);//get voltage measurements for gate DAC codes
-    unix_w("cp data_gateDAC_ivdd25V ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd25V');
-    unix_w("cp data_gateDAC_ivdd60V_0 ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_0');
-    unix_w("cp data_gateDAC_ivdd60V_1 ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_1');
-    unix_w("cp data_gateDAC_ivdd60V_0_ER ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_0_ER');
-    unix_w("cp data_gateDAC_ivdd60V_1_ER ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_1_ER');
+    unix_w("cp data_gateDAC_ivdd25V ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd25V");
+    unix_w("cp data_gateDAC_ivdd60V_0 ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_0");
+    unix_w("cp data_gateDAC_ivdd60V_1 ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_1");
+    unix_w("cp data_gateDAC_ivdd60V_0_ER ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_0_ER");
+    unix_w("cp data_gateDAC_ivdd60V_1_ER ~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/data_gateDAC_chip"+chip_num+brdtype+"_ivdd60V_1_ER");
     exec("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC.sce",-1); // Call gate DAC polifit function for 5 of reference gate dac voltages to get the voltage codes
     // Plot the data
     scf(5);clf(5);
@@ -126,8 +126,8 @@ function Step_4_callback()
     unix_w("cp "+pulse_width_table_path+"/pulse_width_table_lowsubVt_dirswc_default "+pulse_width_table_path+"/pulse_width_table_lowsubVt_dirswc_chip"+chip_num+brdtype);
     //Recover injection parameters
     // Gate coupling calibration
-    unix_w("cp ~/rasp30/prog_assembly/libs/chip_parameters/chip_para/chip_para_RI_chip"+chip_num+brdtype+".asm chip_para_RI.asm');
-    unix_w("cp ~/rasp30/prog_assembly/libs/chip_parameters/chip_para/chip_para_TR_chip"+chip_num+brdtype+".asm chip_para_TR.asm');
+    unix_w("cp ~/rasp30/prog_assembly/libs/chip_parameters/chip_para/chip_para_RI_chip"+chip_num+brdtype+".asm chip_para_RI.asm");
+    unix_w("cp ~/rasp30/prog_assembly/libs/chip_parameters/chip_para/chip_para_TR_chip"+chip_num+brdtype+".asm chip_para_TR.asm");
     disp('Step 4: In progress');
     unix_w("sudo ~/rasp30/prog_assembly/libs/sh/asm2ihex.sh tunnel_revtun_SWC_CAB ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_SWC_CAB_ver00.s43 16384 16384 16384");
     fd = mopen('target_info_swc','wt'); mputl('0x0001 0x002d 0x0110 0x2302 0x0000 0xffff', fd); mclose(fd); // 45(Row) 272(Col) 10E-06(Target Current) 1
