@@ -63,6 +63,6 @@ cd('/home/ubuntu/RASP_Workspace');
 //getd('/home/ubuntu/RASP_Workspace/block_files/compile_files')
 
 //Add modelica files' path to the variable %MODELICA_USER_LIBS
-mprintf("Adding modelica file paths to the variable %MODELICA_USER_LIBS);
+mprintf("Adding modelica file paths to the variable %MODELICA_USER_LIBS");
 global %MODELICA_USER_LIBS;
 %MODELICA_USER_LIBS="/home/ubuntu/rasp30/xcos_blocks";
