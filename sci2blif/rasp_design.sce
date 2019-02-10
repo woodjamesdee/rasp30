@@ -52,9 +52,9 @@ xcosPalAdd(pal11,["FPAA" "Macro-block Generation"]);
 funcprot(previousprot); //Turn the warning messages back on to be displayed in consold
 
 // Launching the GUI
-mprintf("Launching the GUI");
+mprintf("Launching the GUI\n");
 exec('/home/ubuntu/rasp30/sci2blif/guicode_v6.sce',-1);
-mprintf("Finished executing guicode_v6.sce, now launching caps4dgn.sce");
+mprintf("Finished executing guicode_v6.sce, now launching caps4dgn.sce\n");
 exec('/home/ubuntu/rasp30/sci2blif/caps4dgn.sce',-1);
 cd('/home/ubuntu/RASP_Workspace');
 //exec('/home/ubuntu/rasp30/work/examples/variables/allvariables.sce',-1)
@@ -63,6 +63,7 @@ cd('/home/ubuntu/RASP_Workspace');
 //getd('/home/ubuntu/RASP_Workspace/block_files/compile_files')
 
 //Add modelica files' path to the variable %MODELICA_USER_LIBS
-mprintf("Adding modelica file paths to the variable");
+mprintf("Adding modelica file paths to the variable\n");
 global %MODELICA_USER_LIBS;
 %MODELICA_USER_LIBS="/home/ubuntu/rasp30/xcos_blocks";
+mprintf("Completed rasp_design.sce file\n");
