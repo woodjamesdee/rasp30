@@ -311,10 +311,10 @@ function View_Routing_callback(handles)
                 end
                 unix_s('mv ' + fname' + '.pads ' + fname + '.place ' + fname + '.net ' + fname + '.route ' +hid_dir);
                 filebrowser();
-            else messagebox(["You do not have a ' + fname+ '.pads file in the current directory." "Please create one by compiling your design or by hand."], "Missing File", "warning");
+            else messagebox(["You do not have a " + fname+ ".pads file in the current directory." "Please create one by compiling your design or by hand."], "Missing File", "warning");
             end
         end
-    else messagebox(["You do not have a ' + fname+ '.blif file in the current directory." "Please create one by compiling your design or by hand."], "Missing File", "warning");
+    else messagebox(["You do not have a " + fname+ ".blif file in the current directory." "Please create one by compiling your design or by hand."], "Missing File", "warning");
     end
 endfunction
 
@@ -406,7 +406,7 @@ function Program_Netlist_callback(handles)
                     disp('target_program done');
                     disp("Programming Completed...Ready to Take Data");
                 else
-                    messagebox(["You do not have a ' + fname+ '.pads file in the current directory." "Please create one by compiling a design or doing by hand."], "Missing File", "warning");
+                    messagebox(["You do not have a " + fname+ ".pads file in the current directory." "Please create one by compiling a design or doing by hand."], "Missing File", "warning");
                 end
             end
         else
