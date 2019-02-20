@@ -1,0 +1,14 @@
+.model hhn
+.inputs net1_1 net2_1 net3_1 net4_1 net5_1 net7_1 net24_1
+.outputs out_mite_adc
+
+# HH Neuron
+.subckt hhneuron in[0]=net1_1 in[1]=net2_1 in[2]=net3_1 in[3]=net4_1 out[0]=net23_1 out[1]=net22_1 out[2]=net21_1 #hhneuron_fg[0] =0&hh_leak =1.00e-10&hh_vinbias =1.00e-08&hh_nabias =1.00e-09&hh_kbias =1.00e-09&hh_fbpfetbias =1.00e-10&hh_ota_p_bias[0] =1.00e-10&hh_ota_n_bias[0] =1.00e-10&hh_ota_p_bias[1] =1.00e-10&hh_ota_n_bias[1] =5.00e-10
+
+# Shift register 16inputs 1output
+.subckt sftreg in[0]=net23_1 in[1]=net22_1 in[2]=net21_1 in[3]=net5_1 in[4]=net5_1 in[5]=net5_1 in[6]=net5_1 in[7]=net5_1 in[8]=net5_1 in[9]=net5_1 in[10]=net5_1 in[11]=net5_1 in[12]=net5_1 in[13]=net5_1 in[14]=net5_1 in[15]=net5_1 in[16]=net7_1 in[17]=net5_1 in[18]=net24_1 out[0]=net25_1 out[1]=net26_1 out[2]=net27_1 out[3]=net28_1 #sftreg_fg =0
+
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net25_1 out[0]=out_mite_adc #meas_fg =0.00001
+
+.end

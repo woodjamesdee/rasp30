@@ -1,0 +1,10 @@
+Netlist file: /home/ubuntu/RASP_Workspace/demo_files/C4/version_wo_pad/c4_ramp.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net4_1		10	1	0	#0
+out_ramp_adc 6 1 0
+out:out_ramp_adc	15	1	5	#2
+vcc		7	0	5	#3
+net1_1		9	0	1	#4

@@ -1,0 +1,4 @@
+net1_1 8 1 5 #tgate[1]
+out:net1_1 8 2 5 #tgate[1]
+net2_1 8 3 5 #tgate[1]
+out:net3_1 8 4 5 #tgate[1]

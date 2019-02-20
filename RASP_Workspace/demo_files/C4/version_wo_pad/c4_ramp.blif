@@ -1,0 +1,14 @@
+.model c4_ramp
+.inputs net1_1 vcc
+.outputs out_ramp_adc
+  
+# C4
+.subckt c4_blk in[0]=net3_1 in[1]=net1_1 out[0]=net4_1 #c4_ota_bias[0] =9.560e-09&c4_ota_bias[1] =9.560e-11&c4_fg[0] =0&speech_peakotabias[1] =10e-6&c4_ota_small_cap[0] =0&c4_ota_small_cap[1] =0&c4_ota_p_bias[0] =1.000e-07&c4_ota_n_bias[0] =1.000e-07&c4_ota_p_bias[1] =1.000e-07&c4_ota_n_bias[1] =1.000e-07&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0
+  
+# dc_in
+.subckt fgota in[0]=vcc in[1]=net3_1 out[0]=net3_1 #ota_bias =2e-06&ota_p_bias =2e-06&ota_n_bias =2.71e-07&ota_small_cap =0
+  
+# Ramp_ADC*
+.subckt ramp_fe in[0]=net4_1 out=out_ramp_adc #ramp_fe_fg[0] =0&ramp_pfetinput[0] =10e-9&c4_ota_bias[0] =2e-6&c4_ota_p_bias[0] =2e-6&c4_ota_n_bias[0] =1.5e-6&speech_peakotabias[0] =2e-6&c4_ota_bias[1] =2e-6&c4_ota_p_bias[1] =500e-9&c4_ota_n_bias[1] =500e-9&ramp_pfetinput[1] =30e-9
+  
+.end

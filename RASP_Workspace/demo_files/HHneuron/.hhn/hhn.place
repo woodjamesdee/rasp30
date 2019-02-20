@@ -1,0 +1,16 @@
+Netlist file: /home/ubuntu/RASP_Workspace/demo_files/HHneuron//hhn.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3a_vmm_arch.xml
+Array size: 7 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net25_1		5	9	0	#0
+net23_1		1	9	0	#1
+out_mite_adc	7	1	0	#2
+out:out_mite_adc	8	1	0	#3
+net24_1		0	13	0	#4
+net7_1		0	12	5	#5
+net5_1		0	13	1	#6
+net4_1		0	9	0	#7
+net3_1		0	8	5	#8
+net2_1		0	8	4	#9
+net1_1		0	8	3	#10

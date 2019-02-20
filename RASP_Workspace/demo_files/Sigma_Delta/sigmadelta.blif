@@ -1,0 +1,8 @@
+.model sigmadelta
+.inputs net1_1 net2_1 net3_1
+.outputs net4_1
+  
+# sigmadelta
+.subckt sigma_delta_fe in[0]=net2_1 in[1]=net1_1 in[2]=net3_1 out[0]=net4_1 #sd_ota_bias[0] =5.000e-06&sd_ota_bias[1] =9.000e-07&sd_ota_bias[2] =5.000e-07&sigma_delta_fe_fg[0] =0&sd_ota_bias[3] =2e-6&sd_ota_p_bias[0] =500e-9&sd_ota_n_bias[0] =700e-9&sd_ota_p_bias[1] =500e-9&sd_ota_n_bias[1] =700e-9
+  
+.end
