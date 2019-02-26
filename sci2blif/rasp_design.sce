@@ -36,8 +36,8 @@ if file_list ~= [] then
 end
 
 xcosPalAdd(pal1,["FPAA"]);
-xcosPalAdd(pal1_1,["FPAA" "Level 1 (System) Blocks"]);
-xcosPalAdd(pal1_2,["FPAA" "Level 1 (System) Blocks"]);
+xcosPalAdd(pal1_1,["FPAA"]); // ["FPAA" "Level 1 (System) Blocks"]
+xcosPalAdd(pal1_2,["FPAA"]); // ["FPAA" "Level 1 (System) Blocks"]
 xcosPalAdd(pal2,["FPAA"]);
 xcosPalAdd(pal3,["FPAA"]);
 xcosPalAdd(pal4,["FPAA" "Input/Output Blocks"]);
@@ -56,7 +56,7 @@ mprintf("Launching the GUI\n");
 exec('/home/ubuntu/rasp30/sci2blif/guicode_v6.sce',-1);
 mprintf("Finished executing guicode_v6.sce, now launching caps4dgn.sce\n");
 exec('/home/ubuntu/rasp30/sci2blif/caps4dgn.sce',-1);
-cd('/home/ubuntu/RASP_Workspace');
+cd('/home/ubuntu/rasp30/RASP_Workspace');
 //exec('/home/ubuntu/rasp30/work/examples/variables/allvariables.sce',-1)
 //exec('/home/ubuntu/RASP_Workspace/block_files/create_palette.sce',-1);
 //getd('/home/ubuntu/rasp30/sci2blif/blif4blks/')

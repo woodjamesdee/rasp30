@@ -511,10 +511,10 @@ endfunction
 
 function demo_example_callback(demo_fname,com_prep_index,arb_msg_index)
     global file_name path fname extension;
-    unix_g("mkdir /home/ubuntu/RASP_Workspace/demo_examples/");
-    unix_g("mkdir /home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname);
-    unix_s("cp /home/ubuntu/rasp30/sci2blif/demo_examples/"+demo_fname+".xcos /home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/");
-    file_name= "/home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/"+demo_fname+".xcos"; disp(demo_fname); disp(file_name);
+    unix_g("mkdir /home/ubuntu/rasp30/RASP_Workspace/demo_examples/");
+    unix_g("mkdir /home/ubuntu/rasp30/RASP_Workspace/demo_examples/"+demo_fname);
+    unix_s("cp /home/ubuntu/rasp30/sci2blif/demo_examples/"+demo_fname+".xcos /home/ubuntu/rasp30/RASP_Workspace/demo_examples/"+demo_fname+"/");
+    file_name= "/home/ubuntu/rasp30/RASP_Workspace/demo_examples/"+demo_fname+"/"+demo_fname+".xcos"; disp(demo_fname); disp(file_name);
     [path,fname,extension]=fileparts(file_name);
     cd(path);
     filebrowser();
@@ -658,7 +658,7 @@ function etc7_callback(handles)
     end
 endfunction 
 
-csvpath="/home/ubuntu/RASP_Workspace";
+csvpath="/home/ubuntu/rasp30/RASP_Workspace";
 
 function etc9_callback(handles)
     global csvdata
@@ -673,7 +673,7 @@ endfunction
 
 function etc10_callback(handles)
 
-    csvdir=uigetdir("/home/ubuntu/RASP_Workspace", "Choose a directory.")
+    csvdir=uigetdir("/home/ubuntu/rasp30/RASP_Workspace", "Choose a directory.")
     if ~(isempty(csvdir)) then
         csvf = x_mdialog("CSV File Setup",['Name of variable';'Name for CSV file'],['';'']);
         if ~(isempty(csvf(1))) & ~(isempty(csvf(2))) then
@@ -686,7 +686,7 @@ endfunction
 function etc14_callback(handles)
     global file_name path fname extension board_num chip_num;
     
-    path="/home/ubuntu/RASP_Workspace/compilation_check/";
+    path="/home/ubuntu/rasp30/RASP_Workspace/compilation_check/";
     mkdir(path);
     cd(path);
     file_name=path+"compile_check.xcos";
