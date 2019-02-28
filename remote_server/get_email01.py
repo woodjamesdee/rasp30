@@ -27,7 +27,7 @@ for msgL in range(numMessages):
             print('\t', mmm)
             
 # Create Storage directory ...
-detach_dir = '/home/ubuntu/RASP_Workspace/'
+detach_dir = '~/RASP_Workspace/'
     
 try:
 # Parse Email to extract attachments ...
@@ -70,12 +70,12 @@ try:
         os.system("rm -rf anyName.zip")
         os.system("pwd")
         print(users_email)	
-        os.system("python3.4 /home/ubuntu/rasp30/remote_server/program_fpaa01.py")
+        os.system("python3.4 ~/rasp30/remote_server/program_fpaa01.py")
         # zip hex files and send to user email address
         zip_name = 'results.zip'
         f1 = 'output_vector'
         os.system("zip " + zip_name + " " + f1)
-        os.system("python3.4 /home/ubuntu/rasp30/remote_server/send_results01.py " + users_email + " " +zip_name)
+        os.system("python3.4 ~/rasp30/remote_server/send_results01.py " + users_email + " " +zip_name)
 except:
     print('Failed to download all attachments')
 

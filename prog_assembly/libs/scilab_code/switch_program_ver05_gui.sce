@@ -67,7 +67,7 @@ while j <= number_of_switchfiles,
         [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x4100 -length 4100 -output_file_name swc_pgm_result_"+string(j)+".hex");
     end
     if (b1==0) & (b2==0) & (b3==0) then j=j+1; end // 0 if no error occurred, 1 if error.
-    if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+    if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
 end
 
 // Read into scilab

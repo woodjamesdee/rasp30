@@ -21,9 +21,9 @@ fd = mopen('input_vector','wt'); mputl('0x0000 0x0000 0x03e8 0xFFFF', fd); mclos
 fd = mopen('output_info','wt'); mputl('0x0000', fd); mclose(fd); // making fake output_info
 
 exec("~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce",-1);
-exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
 disp('tunnel , reverse tunnel done');
-exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
 disp('switch_program done');
-exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
 disp('DC setup done');

@@ -14,7 +14,7 @@ OLD1="top^reset"
 NEW1="net$b"
 OLD2="top^op1"
 NEW2="net$c"
-DPATH="/home/ubuntu/Downloads/vtr_release/vtr_flow/temp/div2.blif"
+DPATH="~/Downloads/vtr_release/vtr_flow/temp/div2.blif"
 for f in $DPATH
 do
   if [ -f $f -a -r $f ]; then

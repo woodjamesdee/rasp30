@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 1
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 1
 
 
    1               	.include "pmem_defs.asm"
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
   56               	.set    P1SEL,     0x0026
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 2
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 2
 
 
   57               	
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
  113               	.set    TAR,       0x0170
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 3
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 3
 
 
  114               	.set    TACCTL0,   0x0162
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 4
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 4
 
 
  171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 5
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 5
 
 
  228               	
@@ -298,7 +298,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
   10               	.set    INJ_TIME_SP_2,     5000          /* injection time for switch programming (10us) (2nd pulse
   11               	.set    INJ_TIME_SP_3,     100          /* injection time for switch programming (10us) (3rd pulse)
   12               	.set    INJ_TIME_SP_4,     100          /* injection time for switch programming (10us) (4th pulse)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 6
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 6
 
 
   13               	.set    INJ_TIME_SP_5,     100          /* injection time for switch programming (10us) (5th pulse)
@@ -358,7 +358,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
   67               	.set    RIL_GATE_S_SWC,     0x0040          /* Gate_S voltage for SWC low sub Vth recover injection
   68               	.set    RIL_VC1_SWC,     0x1190          /* Verify Current 1 for SWC low sub Vth recover injection 
   69               	.set    RIL_VC2_SWC,     0x10d0          /* Verify Current 1 for SWC low sub Vth recover injection 
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 7
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 7
 
 
   70               	.set    RIL_VD1_SWC,     0xea0e          /* Drain Voltage for recover injection final stage */
@@ -418,7 +418,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  124               	.set    MCPL_INJ_T_SWC,    1          /* Injection time for SWC low sub Vth measured coarse program
  125               	.set    MCPL_GATE_S_OTA,    0x3200          /* Gate_S voltage for OTA low sub Vth measured coarse p
  126               	.set    MCPL_INJ_T_OTA,    2          /* Injection time for OTA low sub Vth measured coarse program
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 8
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 8
 
 
  127               	.set    MCPL_GATE_S_OTAREF,    0x3200          /* Gate_S voltage for OTAREF low sub Vth measured co
@@ -478,7 +478,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  181               	.set    FPL_INJ_T_DIRSWC,    1          /* Injection time for SWC low sub Vth fine program = *10us 
  182               	.set    FPL_VD_OS_DIRSWC,    46         /* Vd table offset */
  183               	
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 9
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 9
 
 
    3               	
@@ -538,7 +538,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
   44      000B 
   45 008e A242 6001 		mov     #0x0004, &GP_PER_1      ; IVDD to gnd, Set vtun_ext = 12V
   46               		;mov     #0xFFFF, &TUN_MUX       ; Set tunnel mux, <3>:switch <4>:cab <5>:ble
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 10
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 10
 
 
   47 0092 B240 1000 		mov     #0x0010, &TUN_MUX       ; Set CAB tunnel mux, <3>:switch <4>:cab <5>:ble
@@ -598,7 +598,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
   87 012c B240 4000 		mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
   87      100B 
   88 0132 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 11
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 11
 
 
   88      120B 
@@ -658,7 +658,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  140 0010 0000      	.word end_of_test  ; Interrupt  8                      <unused>
  141 0012 0000      	.word end_of_test  ; Interrupt  9                      <unused>
  142 0014 0000      	.word end_of_test  ; Interrupt 10                      Watchdog timer
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 12
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 12
 
 
  143 0016 0000      	.word end_of_test  ; Interrupt 11                      <unused>
@@ -666,7 +666,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ve
  145 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
  146 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
  147 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 13
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 13
 
 
 DEFINED SYMBOLS
@@ -726,7 +726,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 14
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 14
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -786,7 +786,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 15
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 15
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -846,7 +846,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 16
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 16
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -906,7 +906,7 @@ DEFINED SYMBOLS
        chip_para.asm:52     *ABS*:00001540 RI_VC4_MITE
        chip_para.asm:53     *ABS*:0000ea0e RI_VD1_MITE
        chip_para.asm:54     *ABS*:0000fe0e RI_VD2_MITE
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 17
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 17
 
 
        chip_para.asm:55     *ABS*:00000000 RI_GATE_S_DIRSWC
@@ -966,7 +966,7 @@ DEFINED SYMBOLS
        chip_para.asm:119    *ABS*:00000002 MCP_INJ_T_MITE
        chip_para.asm:120    *ABS*:00006200 MCP_GATE_S_DIRSWC
        chip_para.asm:121    *ABS*:00000001 MCP_INJ_T_DIRSWC
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 18
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 18
 
 
        chip_para.asm:123    *ABS*:00004000 MCPL_GATE_S_SWC
@@ -1024,22 +1024,22 @@ DEFINED SYMBOLS
        chip_para.asm:180    *ABS*:00004600 FPL_GATE_S_DIRSWC
        chip_para.asm:181    *ABS*:00000001 FPL_INJ_T_DIRSWC
        chip_para.asm:182    *ABS*:0000002e FPL_VD_OS_DIRSWC
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:6      .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:11     .text:0000000e init_wait
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 19
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:6      .text:00000000 main
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:11     .text:0000000e init_wait
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43 			page 19
 
 
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:31     .text:00000052 tunnel
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:63     .text:000000ca reverse_tunnel
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:125    .text:00000184 end_of_test
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:33     .text:00000054 tunnel_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:103    .text:00000160 wait_ms
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:60     .text:000000c8 tunnel_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:65     .text:000000cc reverse_tunnel_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:100    .text:0000015e reverse_tunnel_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:106    .text:00000166 wait_ms_loop
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:114    .text:00000172 wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:117    .text:00000178 wait_10us_loop
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:31     .text:00000052 tunnel
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:63     .text:000000ca reverse_tunnel
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:125    .text:00000184 end_of_test
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:33     .text:00000054 tunnel_s
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:103    .text:00000160 wait_ms
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:60     .text:000000c8 tunnel_e
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:65     .text:000000cc reverse_tunnel_s
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:100    .text:0000015e reverse_tunnel_e
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:106    .text:00000166 wait_ms_loop
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:114    .text:00000172 wait_10us
+~/rasp30/prog_assembly/libs/asm_code/tunnel_revtun_CAB_ver00.s43:117    .text:00000178 wait_10us_loop
 
 NO UNDEFINED SYMBOLS
 

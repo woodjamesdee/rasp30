@@ -2,7 +2,7 @@ global file_name path fname extension chip_num board_num brdtype hex_1na showpro
 kappa_constant = 30; // relationship of target current between subVt and lowsubVt range.
 
 function dir_callback() 
-    [a,b]=unix_g('acroread /home/ubuntu/rasp30/sci2blif/documentation/cal_guide.pdf &');  
+    [a,b]=unix_g('acroread ~/rasp30/sci2blif/documentation/cal_guide.pdf &');  
     if b == 1 then messagebox("Install Adobe Reader via the Documents menu on main RASP Design gui. ", "Adode Reader not installed yet!", "scilab"); end  
 endfunction
 
@@ -217,9 +217,9 @@ function Step_6_callback()
     fd = mopen('input_vector','wt'); mputl('0x0000 0x0000 0x03e8 0xFFFF', fd); mclose(fd); // making fake input_vector
     fd = mopen('output_info','wt'); mputl('0x0000', fd); mclose(fd); // making fake output_info
     exec("~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce",-1);
-    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+    exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
     disp('tunnel , reverse tunnel done');
-    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
+    exec('~/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
     disp('target_program done');
     disp('Step 6 is complete!');
 endfunction

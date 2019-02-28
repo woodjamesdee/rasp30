@@ -49,18 +49,18 @@ if n_target_highaboveVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_swc_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
         [a1,b1]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/write_mem2_NoRelease.tcl -start_address 0x7000 -input_file_name "+hid_dir+"/target_info_highaboveVt_swc");
-//    unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/write_mem2_NoRelease.tcl -start_address 0x6800 -input_file_name /home/ubuntu/rasp30/prog_assembly/libs/lookup_tables/pulse_width_table_offset_d1o4");  // temp. should be corrected later!!!!!!!!!!!!!!!
+//    unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/write_mem2_NoRelease.tcl -start_address 0x6800 -input_file_name ~/rasp30/prog_assembly/libs/lookup_tables/pulse_width_table_offset_d1o4");  // temp. should be corrected later!!!!!!!!!!!!!!!
         if (b1==0) then
             [a2,b2]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/program.tcl -speed 115200 "+hid_dir+"/first_coarse_program_highaboveVt_SWC.elf");
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_swc_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -70,7 +70,7 @@ if n_target_highaboveVt_swc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_swc_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -81,7 +81,7 @@ if n_target_highaboveVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_swc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -141,7 +141,7 @@ if n_target_aboveVt_swc ~= 0 then
                 [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_swc_2_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         disp("recover inj");
         while 1==1,
@@ -151,7 +151,7 @@ if n_target_aboveVt_swc ~= 0 then
                 [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_swc_3_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         disp("first coarse inj");
         while 1==1,
@@ -161,7 +161,7 @@ if n_target_aboveVt_swc ~= 0 then
                 [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_swc_4_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         disp("measured coarse inj");
         while 1==1,
@@ -172,7 +172,7 @@ if n_target_aboveVt_swc ~= 0 then
                 [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_swc_5_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
         //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -391,7 +391,7 @@ if n_target_subVt_swc ~= 0 then
                 [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_swc_2_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         disp("recover inj");
         while 1==1,
@@ -401,7 +401,7 @@ if n_target_subVt_swc ~= 0 then
                 [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_swc_3_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         disp("first coarse inj");
         while 1==1,
@@ -411,7 +411,7 @@ if n_target_subVt_swc ~= 0 then
                 [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_swc_4_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         disp("measured coarse inj");
         while 1==1,
@@ -422,7 +422,7 @@ if n_target_subVt_swc ~= 0 then
                 [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_swc_5_"+string(j)+".hex");
             end
             if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+            if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
         end
         //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
         //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -602,7 +602,7 @@ if n_target_lowsubVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_swc_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -612,7 +612,7 @@ if n_target_lowsubVt_swc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_swc_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -622,7 +622,7 @@ if n_target_lowsubVt_swc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_swc_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -633,7 +633,7 @@ if n_target_lowsubVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_swc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -654,7 +654,7 @@ if n_target_highaboveVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_ota_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -664,7 +664,7 @@ if n_target_highaboveVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_ota_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -674,7 +674,7 @@ if n_target_highaboveVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_ota_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -685,7 +685,7 @@ if n_target_highaboveVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -706,7 +706,7 @@ if n_target_aboveVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_ota_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -716,7 +716,7 @@ if n_target_aboveVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_ota_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -726,7 +726,7 @@ if n_target_aboveVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_ota_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -737,7 +737,7 @@ if n_target_aboveVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -758,7 +758,7 @@ if n_target_subVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_ota_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -768,7 +768,7 @@ if n_target_subVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_ota_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -778,7 +778,7 @@ if n_target_subVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_ota_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -789,7 +789,7 @@ if n_target_subVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -810,7 +810,7 @@ if n_target_lowsubVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_ota_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -820,7 +820,7 @@ if n_target_lowsubVt_ota ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_ota_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -830,7 +830,7 @@ if n_target_lowsubVt_ota ~= 0 then
         [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_ota_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -841,7 +841,7 @@ if n_target_lowsubVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -862,7 +862,7 @@ if n_target_aboveVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_otaref_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -872,7 +872,7 @@ if n_target_aboveVt_otaref ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_otaref_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -882,7 +882,7 @@ if n_target_aboveVt_otaref ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_otaref_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -893,7 +893,7 @@ if n_target_aboveVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_otaref_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -914,7 +914,7 @@ if n_target_subVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_otaref_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -924,7 +924,7 @@ if n_target_subVt_otaref ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_otaref_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -934,7 +934,7 @@ if n_target_subVt_otaref ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_otaref_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -945,7 +945,7 @@ if n_target_subVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_otaref_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -966,7 +966,7 @@ if n_target_lowsubVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_otaref_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("recover inj");
     while 1==1,
@@ -976,7 +976,7 @@ if n_target_lowsubVt_otaref ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_otaref_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -986,7 +986,7 @@ if n_target_lowsubVt_otaref ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_otaref_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -997,7 +997,7 @@ if n_target_lowsubVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_otaref_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -1018,7 +1018,7 @@ if n_target_aboveVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_mite_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     disp("recover inj");
     while 1==1,
@@ -1028,7 +1028,7 @@ if n_target_aboveVt_mite ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_mite_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -1038,7 +1038,7 @@ if n_target_aboveVt_mite ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_mite_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -1049,7 +1049,7 @@ if n_target_aboveVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_mite_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -1070,7 +1070,7 @@ if n_target_subVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_mite_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
      disp("recover inj");
      while 1==1,
@@ -1080,7 +1080,7 @@ if n_target_subVt_mite ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_mite_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -1090,7 +1090,7 @@ if n_target_subVt_mite ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_mite_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -1101,7 +1101,7 @@ if n_target_subVt_mite ~= 0 then
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_mite_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -1122,7 +1122,7 @@ if n_target_lowsubVt_mite ~= 0 then
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_mite_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     disp("recover inj");
     while 1==1,
@@ -1132,7 +1132,7 @@ if n_target_lowsubVt_mite ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_mite_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -1142,7 +1142,7 @@ if n_target_lowsubVt_mite ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_mite_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -1153,7 +1153,7 @@ if n_target_lowsubVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_mite_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -1174,7 +1174,7 @@ if n_target_aboveVt_dirswc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_dirswc_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     disp("recover inj");
     while 1==1,
@@ -1184,7 +1184,7 @@ if n_target_aboveVt_dirswc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_dirswc_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -1194,7 +1194,7 @@ if n_target_aboveVt_dirswc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_dirswc_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -1205,7 +1205,7 @@ if n_target_aboveVt_dirswc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_dirswc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -1226,7 +1226,7 @@ if n_target_subVt_dirswc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_dirswc_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     disp("recover inj");
     while 1==1,
@@ -1236,7 +1236,7 @@ if n_target_subVt_dirswc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_dirswc_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -1246,7 +1246,7 @@ if n_target_subVt_dirswc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_dirswc_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -1257,7 +1257,7 @@ if n_target_subVt_dirswc ~= 0 then
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_dirswc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");
@@ -1278,7 +1278,7 @@ if n_target_lowsubVt_dirswc ~= 0 then
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_dirswc_2.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     disp("recover inj");
     while 1==1,
@@ -1288,7 +1288,7 @@ if n_target_lowsubVt_dirswc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_dirswc_3.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("first coarse inj");
     while 1==1,
@@ -1298,7 +1298,7 @@ if n_target_lowsubVt_dirswc ~= 0 then
             [a3,b3]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_dirswc_4.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("measured coarse inj");
     while 1==1,
@@ -1309,7 +1309,7 @@ if n_target_lowsubVt_dirswc ~= 0 then
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_dirswc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
      end
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x7002 -length 220 -output_file_name temp_1.txt");
     //unix_w("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6800 -length 220 -output_file_name temp_2.txt");

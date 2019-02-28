@@ -1,4 +1,4 @@
-<block name="/home/ubuntu/RASP_Workspace/test_0701_EmailRemote2//test_0701_EmailRemote2.net" instance="FPGA_packed_netlist[0]">
+<block name="~/RASP_Workspace/test_0701_EmailRemote2//test_0701_EmailRemote2.net" instance="FPGA_packed_netlist[0]">
 	<inputs>
 		dummy1 net1_1 
 	</inputs>

@@ -1,7 +1,7 @@
 //***********************************
 //SCRIPT TO READ FROM XCOS MODEL FILE
 //***********************************
-vpr_path='/home/ubuntu/rasp30/vtr_release/vtr_flow/'
+vpr_path='~/rasp30/vtr_release/vtr_flow/'
 
 clear blk blk_objs jlist cat_num loctmp loctmp2;
 global file_name jlist cat_num board_num addvmm plcvpr pass_num chip_num cap_info show_dsgnmatrics;
@@ -50,8 +50,8 @@ internal_number = 1; add_tgates4logic = 0; number_tgates = 0;
 dac_loc_idx=0; dac_buf_loc_idx=0; gpin_loc_idx=0; adc_loc_idx=0; adc_ip_idx1=1; adc_ip_idx2=1; adc_ip_net=[1 2];
 
 dac_loc= cell(); dac_buf_loc= cell(); gpin_loc= cell(); adc_locin= cell(); adc_loc= cell(); iopad_loc= cell();
-exec("/home/ubuntu/rasp30/sci2blif/io_info/io_info_rasp30.sce",-1);
-exec("/home/ubuntu/rasp30/sci2blif/io_info/io_info_rasp30a.sce",-1);
+exec("~/rasp30/sci2blif/io_info/io_info_rasp30.sce",-1);
+exec("~/rasp30/sci2blif/io_info/io_info_rasp30a.sce",-1);
 
 // Get net & block information (connection, block parameters)
 for i =1:no
@@ -107,7 +107,7 @@ for i =1:no
     end;
 end;
 // Get pad information from pad blocks
-file_list=listfiles("/home/ubuntu/rasp30/sci2blif/sci2pads_added_blocks/*.sce");
+file_list=listfiles("~/rasp30/sci2blif/sci2pads_added_blocks/*.sce");
 size_file_list=size(file_list);
 if file_list ~= [] then
     for bl=1:length(blk_objs)
@@ -324,7 +324,7 @@ else
 end
 
 // write blif information
-file_list=listfiles("/home/ubuntu/rasp30/sci2blif/sci2blif_added_blocks/*.sce");
+file_list=listfiles("~/rasp30/sci2blif/sci2blif_added_blocks/*.sce");
 size_file_list=size(file_list);
 if file_list ~= [] then
     for bl=1:length(blk_objs)
@@ -355,8 +355,8 @@ if(makeblk) then
     disp('Done!');
 else
     if plcvpr then
-        if addvmm then unix_s('/home/ubuntu/rasp30/vtr_release/vpr/vpr /home/ubuntu/rasp30/vpr2swcs/./arch/'+arch+'_arch.xml ' + path + fname + '  -route_chan_width 17 -timing_analysis off -fix_pins ' + path + fname + '.pads -nodisp');
-        else unix_s('/home/ubuntu/rasp30/vtr_release/vpr/vpr /home/ubuntu/rasp30/vpr2swcs/./arch/'+arch+'_arch.xml ' + path + fname + '  -route_chan_width 17 -timing_analysis off -fix_pins ' + path + fname + '.pads -nodisp');
+        if addvmm then unix_s('~/rasp30/vtr_release/vpr/vpr ~/rasp30/vpr2swcs/./arch/'+arch+'_arch.xml ' + path + fname + '  -route_chan_width 17 -timing_analysis off -fix_pins ' + path + fname + '.pads -nodisp');
+        else unix_s('~/rasp30/vtr_release/vpr/vpr ~/rasp30/vpr2swcs/./arch/'+arch+'_arch.xml ' + path + fname + '  -route_chan_width 17 -timing_analysis off -fix_pins ' + path + fname + '.pads -nodisp');
         end
 
         plcfile=mopen(path + fname + '.place','r'); tmpplc=mgetl(plcfile); mclose(plcfile);
@@ -394,9 +394,9 @@ else
         plcfile=mopen(path + fname + '.place','a'); mputl(loc_matrix(:,3),plcfile); mclose(plcfile);
 
         // generate switches
-        unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -route' + brdtype);
+        unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -route' + brdtype);
     else
-        unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype);
+        unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype);
     end
     unix_s('mv ' + fname' + '.pads ' + fname + '.place ' + fname + '.net ' + fname + '.route ' +hid_dir);
     

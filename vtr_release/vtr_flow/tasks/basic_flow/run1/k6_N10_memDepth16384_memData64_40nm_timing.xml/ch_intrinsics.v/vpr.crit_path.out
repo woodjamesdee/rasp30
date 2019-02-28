@@ -1,4 +1,4 @@
-/home/ubuntu/Downloads/vtr_release/vtr_flow/../vpr/vpr k6_N10_memDepth16384_memData64_40nm_timing.xml ch_intrinsics --place_file ch_intrinsics.place --route --route_chan_width 66 --cluster_seed_type timing --nodisp
+~/Downloads/vtr_release/vtr_flow/../vpr/vpr k6_N10_memDepth16384_memData64_40nm_timing.xml ch_intrinsics --place_file ch_intrinsics.place --route --route_chan_width 66 --cluster_seed_type timing --nodisp
 
 VPR FPGA Placement and Routing.
 Version: Version 6.0 Full Release

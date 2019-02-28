@@ -13,10 +13,10 @@ endfunction
 function Start_L1_sim_callback()
     global L1_sim_name;
     
-    file_list=listfiles("/home/ubuntu/rasp30/xcos_blocks/*_c.sci");
+    file_list=listfiles("~/rasp30/xcos_blocks/*_c.sci");
     l_file_list=size(file_list,1);
     for ii=1:l_file_list
-        if file_list(ii) == "/home/ubuntu/rasp30/xcos_blocks/"+L1_sim_name+"_c.sci" then messagebox('A Sim file with the same name exists. Please check it.', "Level 1 sim name error", "error"); abort; end
+        if file_list(ii) == "~/rasp30/xcos_blocks/"+L1_sim_name+"_c.sci" then messagebox('A Sim file with the same name exists. Please check it.', "Level 1 sim name error", "error"); abort; end
     end
     
     fd_w= mopen("./"+L1_sim_name+"_c_2.sci",'wt');
@@ -54,7 +54,7 @@ function Gen_L1_sim_callback()
     mclose(fd_w);
     
     unix_w("cat ./"+L1_sim_name+"_c_1.sci ./"+L1_sim_name+"_c_2.sci ./"+L1_sim_name+"_c_3.sci "+" > ./"+L1_sim_name+"_c.sci");
-    unix_w("cp ./"+L1_sim_name+"_c.sci /home/ubuntu/rasp30/xcos_blocks/"+L1_sim_name+"_c.sci");
+    unix_w("cp ./"+L1_sim_name+"_c.sci ~/rasp30/xcos_blocks/"+L1_sim_name+"_c.sci");
     
     disp("Level 1 simulation file for "+L1_sim_name+" has been generated.");
     filebrowser();

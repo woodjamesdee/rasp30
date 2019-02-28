@@ -28,7 +28,7 @@ function [x,y,typ]=div2(job,arg1,arg2)
             end
         end
     case 'define' then
-        vfpath = '/home/ubuntu/rasp30/sci2blif/benchmarks/verilog/div2.v'
+        vfpath = '~/rasp30/sci2blif/benchmarks/verilog/div2.v'
         model=scicos_model()
         model.sim=list('div_func',5)
         model.in=-[1:2]'

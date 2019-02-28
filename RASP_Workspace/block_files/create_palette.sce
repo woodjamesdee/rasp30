@@ -10,7 +10,7 @@ loadXcosLibs();
 
 //Loads all .sci files (containing Scilab functions) defined in the path directory.
 //Location of all block files
-getd('/home/ubuntu/RASP_Workspace/block_files/') ;
+getd('~/RASP_Workspace/block_files/') ;
 
 //////////////////////////////////////////////////////////////////////
 ////////////////////Commands for Block Appearance/////////////////////

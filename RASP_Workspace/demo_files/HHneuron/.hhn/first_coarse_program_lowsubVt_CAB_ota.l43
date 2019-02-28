@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 1
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 1
 
 
    1               	.include "pmem_defs.asm"
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
   56               	.set    P1SEL,     0x0026
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 2
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 2
 
 
   57               	
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
  113               	.set    TAR,       0x0170
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 3
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 3
 
 
  114               	.set    TACCTL0,   0x0162
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 4
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 4
 
 
  171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 5
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 5
 
 
  228               	
@@ -298,7 +298,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
   10               	.set CP_GATE_S_OTA, 0x7630 /* Gate(OTA) = 2.9V @ IVDD 6.0V */
   11               	.set CP_INJ_T_OTA, 1 /* Injection time (*10us) */
   12               	.set CP_NUM_OTA, 20 /* # of Measured Coarse Progrm */
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 6
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 6
 
 
   13               	.set CP_GATE_S_OTAREF, 0x7630 /* Gate(OTAREF) = 2.9V @ IVDD 6.0V */
@@ -358,7 +358,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
   25 0048 2753      		incd	r7
   26 004a 874A 0000 		mov	r10, @r7
   27 004e 2753      		incd	r7
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 7
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 7
 
 
   28               	;	mov	#0x0000, r13		;gate_s = 0.6V @ IVDD 2.5V
@@ -418,7 +418,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
   74 00d4 2543      		mov     #2, r5             	; Number of ms
   75 00d6 B012 0000 		call    #wait_ms                ; Call the waiting function
   76 00da B240 2600 		mov 	#0x0026, &DRAIN_CTRL	; gnd, 0xfe0e: 0.415V, 0xde0e: 0.98V, 0xc40e: 1.5V, 0x900e: 2V, 0x000e: 
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 8
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 8
 
 
   76      000B 
@@ -478,7 +478,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  122 0162 2B53      		incd	r11
  123 0164 A24B 0A0B 	        mov     @r11,    &COL_SEL
  124 0168 2B53      		incd	r11
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 9
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 9
 
 
  125 016a 284B      		mov	@r11, r8
@@ -538,7 +538,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  171               	Pulse_w_cal_s:
  172 01f4 2B53      		incd	r11			; @ Row_Sel
  173 01f6 2B53      		incd	r11			; @ Col_Sel
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 10
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 10
 
 
  174 01f8 2B53      		incd	r11	
@@ -598,7 +598,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  222      000B 
  223 0270 2543      	        mov     #2, r5             	; Number of ms
  224 0272 B012 0000 		call    #wait_ms                ; Call the waiting function
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 11
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 11
 
 
  225 0276 B240 A400 		mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn;
@@ -658,7 +658,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  273 0002 0000      	.word end_of_test  ; Interrupt  1                      <unused>
  274 0004 0000      	.word end_of_test  ; Interrupt  2                      <unused>
  275 0006 0000      	.word end_of_test  ; Interrupt  3                      <unused>
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 12
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 12
 
 
  276 0008 0000      	.word end_of_test  ; Interrupt  4                      <unused>
@@ -673,7 +673,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program
  285 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
  286 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
  287 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 13
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 13
 
 
 DEFINED SYMBOLS
@@ -733,7 +733,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 14
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 14
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -793,7 +793,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 15
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 15
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -853,7 +853,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 16
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 16
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -904,38 +904,38 @@ DEFINED SYMBOLS
     chip_para_CP.asm:36     *ABS*:00001430 CPL_GATE_S_DIRSWC
     chip_para_CP.asm:37     *ABS*:00000001 CPL_INJ_T_DIRSWC
     chip_para_CP.asm:38     *ABS*:00000014 CPL_NUM_DIRSWC
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:6      .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:11     .text:0000000e init_wait
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:204    .text:0000022c block_measure
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:33     .text:0000005a coarse_loop_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:112    .text:00000140 measure_verify
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:168    .text:000001ee Pulse_w_calculate
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:51     .text:00000082 coarse_inject
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:45     .text:00000078 coarse_loop_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:265    .text:000002dc end_of_test
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 17
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:6      .text:00000000 main
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:11     .text:0000000e init_wait
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:204    .text:0000022c block_measure
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:33     .text:0000005a coarse_loop_s
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:112    .text:00000140 measure_verify
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:168    .text:000001ee Pulse_w_calculate
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:51     .text:00000082 coarse_inject
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:45     .text:00000078 coarse_loop_e
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:265    .text:000002dc end_of_test
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43 			page 17
 
 
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:58     .text:0000009e coarse_inject_set_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:90     .text:000000fe coarse_inject_skip
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:243    .text:000002b8 wait_ms
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:77     .text:000000e0 multi_inject_pulse_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:254    .text:000002ca wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:84     .text:000000ee multi_inject_pulse_e_1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:86     .text:000000f2 multi_inject_pulse_e_2
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:94     .text:00000104 coarse_inject_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:119    .text:0000015c measure_verify_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:159    .text:000001da measure_verify_skip
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:150    .text:000001c6 status_1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:154    .text:000001d0 Istart_1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:163    .text:000001e0 measure_verify_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:171    .text:000001f4 Pulse_w_cal_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:197    .text:00000224 No_calculation
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:201    .text:0000022a Pulse_w_cal_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:211    .text:00000248 block_measure_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:238    .text:000002aa block_measure_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:246    .text:000002be wait_ms_loop
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:257    .text:000002d0 wait_10us_loop
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:58     .text:0000009e coarse_inject_set_s
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:90     .text:000000fe coarse_inject_skip
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:243    .text:000002b8 wait_ms
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:77     .text:000000e0 multi_inject_pulse_s
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:254    .text:000002ca wait_10us
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:84     .text:000000ee multi_inject_pulse_e_1
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:86     .text:000000f2 multi_inject_pulse_e_2
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:94     .text:00000104 coarse_inject_e
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:119    .text:0000015c measure_verify_s
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:159    .text:000001da measure_verify_skip
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:150    .text:000001c6 status_1
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:154    .text:000001d0 Istart_1
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:163    .text:000001e0 measure_verify_e
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:171    .text:000001f4 Pulse_w_cal_s
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:197    .text:00000224 No_calculation
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:201    .text:0000022a Pulse_w_cal_e
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:211    .text:00000248 block_measure_s
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:238    .text:000002aa block_measure_e
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:246    .text:000002be wait_ms_loop
+~/rasp30/prog_assembly/libs/asm_code/first_coarse_program_lowsubVt_CAB_ota.s43:257    .text:000002d0 wait_10us_loop
 
 NO UNDEFINED SYMBOLS
 

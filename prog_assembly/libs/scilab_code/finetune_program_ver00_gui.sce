@@ -42,7 +42,7 @@ if n_target_highaboveVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_swc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_highaboveVt_swc=fscanfMat(hid_dir+'/target_list_highaboveVt_swc');
@@ -61,7 +61,7 @@ if n_target_aboveVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_swc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_aboveVt_swc=fscanfMat(hid_dir+'/target_list_aboveVt_swc');
@@ -80,7 +80,7 @@ if n_target_subVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_swc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_subVt_swc=fscanfMat(hid_dir+'/target_list_subVt_swc');
@@ -99,7 +99,7 @@ if n_target_lowsubVt_swc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_swc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_lowsubVt_swc=fscanfMat(hid_dir+'/target_list_lowsubVt_swc');
@@ -118,7 +118,7 @@ if n_target_highaboveVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_highaboveVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_highaboveVt_ota=fscanfMat(hid_dir+'/target_list_highaboveVt_ota');
@@ -137,7 +137,7 @@ if n_target_aboveVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_aboveVt_ota=fscanfMat(hid_dir+'/target_list_aboveVt_ota');
@@ -156,7 +156,7 @@ if n_target_subVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_subVt_ota=fscanfMat(hid_dir+'/target_list_subVt_ota');
@@ -175,7 +175,7 @@ if n_target_lowsubVt_ota ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_ota_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_lowsubVt_ota=fscanfMat(hid_dir+'/target_list_lowsubVt_ota');
@@ -194,7 +194,7 @@ if n_target_aboveVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_otaref_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_aboveVt_otaref=fscanfMat(hid_dir+'/target_list_aboveVt_otaref');
@@ -213,7 +213,7 @@ if n_target_subVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_otaref_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_subVt_otaref=fscanfMat(hid_dir+'/target_list_subVt_otaref');
@@ -232,7 +232,7 @@ if n_target_lowsubVt_otaref ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_otaref_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_lowsubVt_otaref=fscanfMat(hid_dir+'/target_list_lowsubVt_otaref');
@@ -251,7 +251,7 @@ if n_target_aboveVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_mite_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_aboveVt_mite=fscanfMat(hid_dir+'/target_list_aboveVt_mite');
@@ -270,7 +270,7 @@ if n_target_subVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_mite_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_subVt_mite=fscanfMat(hid_dir+'/target_list_subVt_mite');
@@ -289,7 +289,7 @@ if n_target_lowsubVt_mite ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_mite_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_lowsubVt_mite=fscanfMat(hid_dir+'/target_list_lowsubVt_mite');
@@ -308,7 +308,7 @@ if n_target_aboveVt_dirswc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_aboveVt_dirswc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_aboveVt_dirswc=fscanfMat(hid_dir+'/target_list_aboveVt_dirswc');
@@ -327,7 +327,7 @@ if n_target_subVt_dirswc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_subVt_dirswc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_subVt_dirswc=fscanfMat(hid_dir+'/target_list_subVt_dirswc');
@@ -346,7 +346,7 @@ if n_target_lowsubVt_dirswc ~= 0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name data_lowsubVt_dirswc_5.hex");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
     disp("fine inj");
     target_l_lowsubVt_dirswc=fscanfMat(hid_dir+'/target_list_lowsubVt_dirswc');

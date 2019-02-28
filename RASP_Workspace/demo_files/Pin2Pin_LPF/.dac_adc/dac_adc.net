@@ -1,4 +1,4 @@
-<block name="/home/ubuntu/RASP_Workspace/demo_files/Pin2Pin_LPF//dac_adc.net" instance="FPGA_packed_netlist[0]">
+<block name="~/RASP_Workspace/demo_files/Pin2Pin_LPF//dac_adc.net" instance="FPGA_packed_netlist[0]">
 	<inputs>
 		net2_1 
 	</inputs>

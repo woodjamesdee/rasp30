@@ -1,148 +1,148 @@
-mkdir -p /home/ubuntu/classfiles/rasp30/
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/documentation/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/rasp_design_added_blocks/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/sci2blif_added_blocks/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/sci2pads_added_blocks/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/macrocab_generation/
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/macroblif_generation/
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/compilation_check/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/io_info/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/sci2blif/demo_examples/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/xcos_blocks/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/scilab_config/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/vpr2swcs/
-mkdir -p /home/ubuntu/classfiles/rasp30/vpr2swcs/arch/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/vpr2swcs/macroblk_generation/
-mkdir -p /home/ubuntu/classfiles/rasp30/vpr2swcs/macroblk_generation/frame/
-mkdir -p /home/ubuntu/classfiles/rasp30/vtr_release/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/sh/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/asm_code/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/chip_parameters/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_diodeADC/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_drainDAC/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_miteADC/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_nFETpFET/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_onchipDAC/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/includes/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/prog_assembly/libs/tcl/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/remote_server/ 
-mkdir -p /home/ubuntu/classfiles/rasp30/modelica_tb/
+mkdir -p ~/classfiles/rasp30/
+mkdir -p ~/classfiles/rasp30/sci2blif/
+mkdir -p ~/classfiles/rasp30/sci2blif/documentation/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/rasp_design_added_blocks/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/sci2blif_added_blocks/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/sci2pads_added_blocks/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/xcos_ref/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/xcos_ref/macrocab_generation/
+mkdir -p ~/classfiles/rasp30/sci2blif/xcos_ref/macroblif_generation/
+mkdir -p ~/classfiles/rasp30/sci2blif/xcos_ref/compilation_check/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/io_info/ 
+mkdir -p ~/classfiles/rasp30/sci2blif/demo_examples/ 
+mkdir -p ~/classfiles/rasp30/xcos_blocks/ 
+mkdir -p ~/classfiles/rasp30/scilab_config/ 
+mkdir -p ~/classfiles/rasp30/vpr2swcs/
+mkdir -p ~/classfiles/rasp30/vpr2swcs/arch/ 
+mkdir -p ~/classfiles/rasp30/vpr2swcs/macroblk_generation/
+mkdir -p ~/classfiles/rasp30/vpr2swcs/macroblk_generation/frame/
+mkdir -p ~/classfiles/rasp30/vtr_release/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/sh/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/asm_code/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/chip_parameters/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_diodeADC/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_drainDAC/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_gateDAC/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_miteADC/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_nFETpFET/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/char_onchipDAC/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/includes/ 
+mkdir -p ~/classfiles/rasp30/prog_assembly/libs/tcl/ 
+mkdir -p ~/classfiles/rasp30/remote_server/ 
+mkdir -p ~/classfiles/rasp30/modelica_tb/
 
 #Remote Server Folder
-cp /home/ubuntu/rasp30/remote_server/* /home/ubuntu/classfiles/rasp30/remote_server/
+cp ~/rasp30/remote_server/* ~/classfiles/rasp30/remote_server/
 
 #Sci2blif Folder
-cp /home/ubuntu/rasp30/sci2blif/caps4dgn.sce              /home/ubuntu/classfiles/rasp30/sci2blif/ 
-cp /home/ubuntu/rasp30/sci2blif/cat_junc.sce              /home/ubuntu/classfiles/rasp30/sci2blif/ 
-cp /home/ubuntu/rasp30/sci2blif/dsgnmtrcs_fcn.sce         /home/ubuntu/classfiles/rasp30/sci2blif/ 
-cp /home/ubuntu/rasp30/sci2blif/dsgnmtrcs.sce             /home/ubuntu/classfiles/rasp30/sci2blif/ 
-cp /home/ubuntu/rasp30/sci2blif/fpaacal_fcn.sce           /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/fpaacal.sce               /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/guicode_v6.sce            /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/level1_sim_gen_fcn.sce    /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/level1_sim_gen_gui.sce    /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/macroblif_gen_fcn.sce     /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/macroblif_gen_gui.sce     /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/macrocab_gen_fcn.sce      /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/macrocab_gen_gui.sce      /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/rasp_design.sce           /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/retool.py                 /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/retool.sce                /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/rmunzip.py                /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/sci2blif.sce              /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/send_email_ip_pw_fcn.sce  /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/send_email_ip_pw.sce      /home/ubuntu/classfiles/rasp30/sci2blif/
-cp /home/ubuntu/rasp30/sci2blif/usbreset                  /home/ubuntu/classfiles/rasp30/sci2blif/ 
-cp /home/ubuntu/rasp30/sci2blif/rasp_design_added_blocks/*     /home/ubuntu/classfiles/rasp30/sci2blif/rasp_design_added_blocks/
-cp /home/ubuntu/rasp30/sci2blif/sci2blif_added_blocks/*        /home/ubuntu/classfiles/rasp30/sci2blif/sci2blif_added_blocks/
-cp /home/ubuntu/rasp30/sci2blif/sci2pads_added_blocks/*        /home/ubuntu/classfiles/rasp30/sci2blif/sci2pads_added_blocks/
-cp /home/ubuntu/rasp30/sci2blif/xcos_ref/macrocab_generation/* /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/macrocab_generation/
-cp /home/ubuntu/rasp30/sci2blif/xcos_ref/macroblif_generation/* /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/macroblif_generation/
-cp /home/ubuntu/rasp30/sci2blif/xcos_ref/compilation_check/*   /home/ubuntu/classfiles/rasp30/sci2blif/xcos_ref/compilation_check/
-cp /home/ubuntu/rasp30/sci2blif/io_info/*                      /home/ubuntu/classfiles/rasp30/sci2blif/io_info/
-cp /home/ubuntu/rasp30/sci2blif/documentation/*                /home/ubuntu/classfiles/rasp30/sci2blif/documentation/
-cp /home/ubuntu/rasp30/sci2blif/demo_examples/*                /home/ubuntu/classfiles/rasp30/sci2blif/demo_examples/
-rm /home/ubuntu/classfiles/rasp30/sci2blif/documentation/cal_guide.pdf
-rm /home/ubuntu/classfiles/rasp30/sci2blif/documentation/AdbeRdr9.5.5-1_i386linux_enu.deb
+cp ~/rasp30/sci2blif/caps4dgn.sce              ~/classfiles/rasp30/sci2blif/ 
+cp ~/rasp30/sci2blif/cat_junc.sce              ~/classfiles/rasp30/sci2blif/ 
+cp ~/rasp30/sci2blif/dsgnmtrcs_fcn.sce         ~/classfiles/rasp30/sci2blif/ 
+cp ~/rasp30/sci2blif/dsgnmtrcs.sce             ~/classfiles/rasp30/sci2blif/ 
+cp ~/rasp30/sci2blif/fpaacal_fcn.sce           ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/fpaacal.sce               ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/guicode_v6.sce            ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/level1_sim_gen_fcn.sce    ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/level1_sim_gen_gui.sce    ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/macroblif_gen_fcn.sce     ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/macroblif_gen_gui.sce     ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/macrocab_gen_fcn.sce      ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/macrocab_gen_gui.sce      ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/rasp_design.sce           ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/retool.py                 ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/retool.sce                ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/rmunzip.py                ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/sci2blif.sce              ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/send_email_ip_pw_fcn.sce  ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/send_email_ip_pw.sce      ~/classfiles/rasp30/sci2blif/
+cp ~/rasp30/sci2blif/usbreset                  ~/classfiles/rasp30/sci2blif/ 
+cp ~/rasp30/sci2blif/rasp_design_added_blocks/*     ~/classfiles/rasp30/sci2blif/rasp_design_added_blocks/
+cp ~/rasp30/sci2blif/sci2blif_added_blocks/*        ~/classfiles/rasp30/sci2blif/sci2blif_added_blocks/
+cp ~/rasp30/sci2blif/sci2pads_added_blocks/*        ~/classfiles/rasp30/sci2blif/sci2pads_added_blocks/
+cp ~/rasp30/sci2blif/xcos_ref/macrocab_generation/* ~/classfiles/rasp30/sci2blif/xcos_ref/macrocab_generation/
+cp ~/rasp30/sci2blif/xcos_ref/macroblif_generation/* ~/classfiles/rasp30/sci2blif/xcos_ref/macroblif_generation/
+cp ~/rasp30/sci2blif/xcos_ref/compilation_check/*   ~/classfiles/rasp30/sci2blif/xcos_ref/compilation_check/
+cp ~/rasp30/sci2blif/io_info/*                      ~/classfiles/rasp30/sci2blif/io_info/
+cp ~/rasp30/sci2blif/documentation/*                ~/classfiles/rasp30/sci2blif/documentation/
+cp ~/rasp30/sci2blif/demo_examples/*                ~/classfiles/rasp30/sci2blif/demo_examples/
+rm ~/classfiles/rasp30/sci2blif/documentation/cal_guide.pdf
+rm ~/classfiles/rasp30/sci2blif/documentation/AdbeRdr9.5.5-1_i386linux_enu.deb
 
 #Work Folder 
-#cp -r /home/ubuntu/rasp30/work/examples/* /home/ubuntu/classfiles/rasp30/work/examples/
+#cp -r ~/rasp30/work/examples/* ~/classfiles/rasp30/work/examples/
 
 #Xcos_blocks Folder
-rsync -a --exclude=temp  --exclude=div2 --exclude=scicosstuf --exclude=shift_register /home/ubuntu/rasp30/xcos_blocks/* /home/ubuntu/classfiles/rasp30/xcos_blocks/
+rsync -a --exclude=temp  --exclude=div2 --exclude=scicosstuf --exclude=shift_register ~/rasp30/xcos_blocks/* ~/classfiles/rasp30/xcos_blocks/
 
 #Scilab_config Folder
-rsync -a --exclude=classfiles /home/ubuntu/rasp30/scilab_config/* /home/ubuntu/classfiles/rasp30/scilab_config/
+rsync -a --exclude=classfiles ~/rasp30/scilab_config/* ~/classfiles/rasp30/scilab_config/
 
 #Vpr2swcs Folder
-cp /home/ubuntu/rasp30/vpr2swcs/block_list                                 /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/genswcs.py                                 /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/genu.py                                    /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/rasp30a.py                                 /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/rasp30a_vmm.py                             /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/rasp30.py                                  /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/rasp30_vmm.py                              /home/ubuntu/classfiles/rasp30/vpr2swcs/
-cp /home/ubuntu/rasp30/vpr2swcs/arch/rasp3_arch.xml                        /home/ubuntu/classfiles/rasp30/vpr2swcs/arch/
-cp /home/ubuntu/rasp30/vpr2swcs/arch/rasp3_vmm_arch.xml                    /home/ubuntu/classfiles/rasp30/vpr2swcs/arch/
-cp /home/ubuntu/rasp30/vpr2swcs/arch/rasp3a_arch.xml                       /home/ubuntu/classfiles/rasp30/vpr2swcs/arch/
-cp /home/ubuntu/rasp30/vpr2swcs/arch/rasp3a_vmm_arch.xml                   /home/ubuntu/classfiles/rasp30/vpr2swcs/arch/
-cp /home/ubuntu/rasp30/vpr2swcs/macroblk_generation/frame/*                /home/ubuntu/classfiles/rasp30/vpr2swcs/macroblk_generation/frame/
+cp ~/rasp30/vpr2swcs/block_list                                 ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/genswcs.py                                 ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/genu.py                                    ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/rasp30a.py                                 ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/rasp30a_vmm.py                             ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/rasp30.py                                  ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/rasp30_vmm.py                              ~/classfiles/rasp30/vpr2swcs/
+cp ~/rasp30/vpr2swcs/arch/rasp3_arch.xml                        ~/classfiles/rasp30/vpr2swcs/arch/
+cp ~/rasp30/vpr2swcs/arch/rasp3_vmm_arch.xml                    ~/classfiles/rasp30/vpr2swcs/arch/
+cp ~/rasp30/vpr2swcs/arch/rasp3a_arch.xml                       ~/classfiles/rasp30/vpr2swcs/arch/
+cp ~/rasp30/vpr2swcs/arch/rasp3a_vmm_arch.xml                   ~/classfiles/rasp30/vpr2swcs/arch/
+cp ~/rasp30/vpr2swcs/macroblk_generation/frame/*                ~/classfiles/rasp30/vpr2swcs/macroblk_generation/frame/
 
 #Vtr_release Folder
-cp -r /home/ubuntu/rasp30/vtr_release/* /home/ubuntu/classfiles/rasp30/vtr_release/
+cp -r ~/rasp30/vtr_release/* ~/classfiles/rasp30/vtr_release/
 
 #Modelica_tb
-cp /home/ubuntu/rasp30/modelica_tb/* /home/ubuntu/classfiles/rasp30/modelica_tb
+cp ~/rasp30/modelica_tb/* ~/classfiles/rasp30/modelica_tb
 
 #Prog_assembly Folder
-cp /home/ubuntu/rasp30/prog_assembly/libs/asm_code/*   /home/ubuntu/classfiles/rasp30/prog_assembly/libs/asm_code/
-rm /home/ubuntu/classfiles/rasp30/prog_assembly/libs/asm_code/char_*
-rm /home/ubuntu/classfiles/rasp30/prog_assembly/libs/asm_code/diode_ADC_char_cal.s43
-rm /home/ubuntu/classfiles/rasp30/prog_assembly/libs/asm_code/drain_DAC_char_cal.s43
-rm /home/ubuntu/classfiles/rasp30/prog_assembly/libs/asm_code/gate_DAC_char_cal.s43
+cp ~/rasp30/prog_assembly/libs/asm_code/*   ~/classfiles/rasp30/prog_assembly/libs/asm_code/
+rm ~/classfiles/rasp30/prog_assembly/libs/asm_code/char_*
+rm ~/classfiles/rasp30/prog_assembly/libs/asm_code/diode_ADC_char_cal.s43
+rm ~/classfiles/rasp30/prog_assembly/libs/asm_code/drain_DAC_char_cal.s43
+rm ~/classfiles/rasp30/prog_assembly/libs/asm_code/gate_DAC_char_cal.s43
 
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/ADC_onchip.sce                        /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_compile.sce                        /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce                      /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/diodeADC_h2v.sce                      /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/diodeADC_i2v.sce                      /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2h.sce                      /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce                      /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/ekvfit_diodeADC.sce                   /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/ekvfit_nfet.sce                       /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/finetune_program_graph.sce            /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/finetune_program_ver00_gui.sce        /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/genarb_compile.sce                    /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/genarb_gpin_compile.sce               /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/GPIO.sce                              /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/linefit.sce                           /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/make_input_vector_file.sce            /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce  /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/outhex2volt.sce                       /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/outhexfile2voltfile_gui.sce           /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/output_compile.sce                    /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/Ramp_ADC_voltage.sce                  /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/read_tar_pgm_result.sce               /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/sramload_w_check.sce                  /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ble_ver00_gui.sce      /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce          /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_graph.sce              /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce          /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_clb_ver00_gui.sce              /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce           /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
-cp /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/voltage_measurement_gui.sce           /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/ADC_onchip.sce                        ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/dc_compile.sce                        ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce                      ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/diodeADC_h2v.sce                      ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/diodeADC_i2v.sce                      ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2h.sce                      ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce                      ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/ekvfit_diodeADC.sce                   ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/ekvfit_nfet.sce                       ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/finetune_program_graph.sce            ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/finetune_program_ver00_gui.sce        ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/genarb_compile.sce                    ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/genarb_gpin_compile.sce               ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/GPIO.sce                              ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/linefit.sce                           ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/make_input_vector_file.sce            ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce  ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/outhex2volt.sce                       ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/outhexfile2voltfile_gui.sce           ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/output_compile.sce                    ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/Ramp_ADC_voltage.sce                  ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/read_tar_pgm_result.sce               ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/sramload_w_check.sce                  ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/switch_program_ble_ver00_gui.sce      ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce          ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/target_program_graph.sce              ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce          ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/tunnel_clb_ver00_gui.sce              ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce           ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
+cp ~/rasp30/prog_assembly/libs/scilab_code/voltage_measurement_gui.sce           ~/classfiles/rasp30/prog_assembly/libs/scilab_code/
 
-cp -rf /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/* /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/
-rm /home/ubuntu/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/*_cal.sce
+cp -rf ~/rasp30/prog_assembly/libs/scilab_code/characterization/* ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/
+rm ~/classfiles/rasp30/prog_assembly/libs/scilab_code/characterization/*_cal.sce
 
-cp /home/ubuntu/rasp30/prog_assembly/libs/sh/*                   /home/ubuntu/classfiles/rasp30/prog_assembly/libs/sh/
-cp /home/ubuntu/rasp30/prog_assembly/libs/tcl/*                  /home/ubuntu/classfiles/rasp30/prog_assembly/libs/tcl/
-cp /home/ubuntu/rasp30/prog_assembly/libs/includes/*             /home/ubuntu/classfiles/rasp30/prog_assembly/libs/includes/
-cp -rf /home/ubuntu/rasp30/prog_assembly/libs/chip_parameters/*  /home/ubuntu/classfiles/rasp30/prog_assembly/libs/chip_parameters/
+cp ~/rasp30/prog_assembly/libs/sh/*                   ~/classfiles/rasp30/prog_assembly/libs/sh/
+cp ~/rasp30/prog_assembly/libs/tcl/*                  ~/classfiles/rasp30/prog_assembly/libs/tcl/
+cp ~/rasp30/prog_assembly/libs/includes/*             ~/classfiles/rasp30/prog_assembly/libs/includes/
+cp -rf ~/rasp30/prog_assembly/libs/chip_parameters/*  ~/classfiles/rasp30/prog_assembly/libs/chip_parameters/
 

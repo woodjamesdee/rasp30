@@ -75,7 +75,7 @@ def main():
     
 def runVTR(arch_file, circuit, pins_file, run_dir, vpr_disp):
 	DEBUG = 0
-	vpr_loc = '/home/ubuntu/rasp30/vtr_release/vpr/vpr'
+	vpr_loc = '~/rasp30/vtr_release/vpr/vpr'
 	chan_width = 17
 
 	circuit_name = circuit.split('/')[-1]

@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 1
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 1
 
 
    1               	.include "pmem_defs.asm"
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
   56               	.set    P1SEL,     0x0026
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 2
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 2
 
 
   57               	
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
  113               	.set    TAR,       0x0170
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 3
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 3
 
 
  114               	.set    TACCTL0,   0x0162
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 4
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 4
 
 
  171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 5
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 5
 
 
  228               	
@@ -298,7 +298,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   10               	.set    INJ_TIME_SP_2,     5000          /* injection time for switch programming (10us) (2nd pulse
   11               	.set    INJ_TIME_SP_3,     100          /* injection time for switch programming (10us) (3rd pulse)
   12               	.set    INJ_TIME_SP_4,     100          /* injection time for switch programming (10us) (4th pulse)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 6
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 6
 
 
   13               	.set    INJ_TIME_SP_5,     100          /* injection time for switch programming (10us) (5th pulse)
@@ -358,7 +358,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   67               	.set    RIL_GATE_S_SWC,     0x0040          /* Gate_S voltage for SWC low sub Vth recover injection
   68               	.set    RIL_VC1_SWC,     0x1190          /* Verify Current 1 for SWC low sub Vth recover injection 
   69               	.set    RIL_VC2_SWC,     0x10d0          /* Verify Current 1 for SWC low sub Vth recover injection 
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 7
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 7
 
 
   70               	.set    RIL_VD1_SWC,     0xea0e          /* Drain Voltage for recover injection final stage */
@@ -418,7 +418,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  124               	.set    MCPL_INJ_T_SWC,    1          /* Injection time for SWC low sub Vth measured coarse program
  125               	.set    MCPL_GATE_S_OTA,    0x3200          /* Gate_S voltage for OTA low sub Vth measured coarse p
  126               	.set    MCPL_INJ_T_OTA,    2          /* Injection time for OTA low sub Vth measured coarse program
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 8
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 8
 
 
  127               	.set    MCPL_GATE_S_OTAREF,    0x3200          /* Gate_S voltage for OTAREF low sub Vth measured co
@@ -478,7 +478,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  181               	.set    FPL_INJ_T_DIRSWC,    1          /* Injection time for SWC low sub Vth fine program = *10us 
  182               	.set    FPL_VD_OS_DIRSWC,    46         /* Vd table offset */
  183               	
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 9
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 9
 
 
    3               	
@@ -538,7 +538,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   46 0090 2B53      		incd	r11
   47 0092 A24B 080B 		mov     @r11,    &ROW_SEL
   48 0096 2B53      		incd	r11
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 10
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 10
 
 
   49 0098 A24B 0A0B 	        mov     @r11,    &COL_SEL
@@ -598,7 +598,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   89 0146 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
   90 014a B012 0000 		call    #wait_10us              ; Call the waiting function
   91 014e 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 11
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 11
 
 
   92 0152 2D3C      		jmp	after_inject_pulse
@@ -658,7 +658,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  134 01f2 B740 3333 		mov     #0x3333, @r7	        ; Record Injection 0x3333 
  134      0000 
  135 01f8 2753      		incd	r7
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 12
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 12
 
 
  136 01fa 874A 0000 		mov     r10, @r7	        ; Record time 
@@ -718,7 +718,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  178 028c B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
  178      0C0B 
  179 0292 1C83      	       	dec.w   r12
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 13
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 13
 
 
  180 0294 0124      	        jz      block_measure_e
@@ -777,7 +777,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
  230 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
  231 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
  232 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 14
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 14
 
 
 DEFINED SYMBOLS
@@ -837,7 +837,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 15
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 15
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -897,7 +897,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 16
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 16
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -957,7 +957,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 17
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 17
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -1017,7 +1017,7 @@ DEFINED SYMBOLS
        chip_para.asm:52     *ABS*:00001540 RI_VC4_MITE
        chip_para.asm:53     *ABS*:0000ea0e RI_VD1_MITE
        chip_para.asm:54     *ABS*:0000fe0e RI_VD2_MITE
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 18
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 18
 
 
        chip_para.asm:55     *ABS*:00000000 RI_GATE_S_DIRSWC
@@ -1077,7 +1077,7 @@ DEFINED SYMBOLS
        chip_para.asm:119    *ABS*:00000002 MCP_INJ_T_MITE
        chip_para.asm:120    *ABS*:00006200 MCP_GATE_S_DIRSWC
        chip_para.asm:121    *ABS*:00000001 MCP_INJ_T_DIRSWC
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 19
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 19
 
 
        chip_para.asm:123    *ABS*:00004000 MCPL_GATE_S_SWC
@@ -1135,26 +1135,26 @@ DEFINED SYMBOLS
        chip_para.asm:180    *ABS*:00004600 FPL_GATE_S_DIRSWC
        chip_para.asm:181    *ABS*:00000001 FPL_INJ_T_DIRSWC
        chip_para.asm:182    *ABS*:0000002e FPL_VD_OS_DIRSWC
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:6      .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:11     .text:0000000e init_wait
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 20
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:6      .text:00000000 main
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:11     .text:0000000e init_wait
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 20
 
 
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:140    .text:00000202 block_measure
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:34     .text:00000062 switch_inject
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:210    .text:000002d0 end_of_test
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:188    .text:000002ac wait_ms
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:45     .text:00000090 switch_inject_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:94     .text:00000154 inject_in_prog_mode
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:199    .text:000002be wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:114    .text:000001ae after_inject_pulse
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:121    .text:000001c0 switch_inject_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:147    .text:0000021e block_measure_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:158    .text:0000023c measure_in_prog_mode_1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:172    .text:00000278 measure_in_prog_mode_2
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:182    .text:00000298 block_measure_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:191    .text:000002b2 wait_ms_loop
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:202    .text:000002c4 wait_10us_loop
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:140    .text:00000202 block_measure
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:34     .text:00000062 switch_inject
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:210    .text:000002d0 end_of_test
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:188    .text:000002ac wait_ms
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:45     .text:00000090 switch_inject_s
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:94     .text:00000154 inject_in_prog_mode
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:199    .text:000002be wait_10us
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:114    .text:000001ae after_inject_pulse
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:121    .text:000001c0 switch_inject_e
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:147    .text:0000021e block_measure_s
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:158    .text:0000023c measure_in_prog_mode_1
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:172    .text:00000278 measure_in_prog_mode_2
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:182    .text:00000298 block_measure_e
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:191    .text:000002b2 wait_ms_loop
+~/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:202    .text:000002c4 wait_10us_loop
 
 NO UNDEFINED SYMBOLS
 

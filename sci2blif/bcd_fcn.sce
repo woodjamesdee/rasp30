@@ -23,8 +23,8 @@ function bcd_xcosgen_callback()
     
     //unix_g("cd "+folder_name);
     
-    //unix_g("cp /home/ubuntu/rasp30/sci2blif/bcd_added_blocks/bcd_frame01.sci bcd_frame01.sci");
-    //unix_g("cp /home/ubuntu/rasp30/sci2blif/bcd_added_blocks/bcd_frame02.sci bcd_frame02.sci");
+    //unix_g("cp ~/rasp30/sci2blif/bcd_added_blocks/bcd_frame01.sci bcd_frame01.sci");
+    //unix_g("cp ~/rasp30/sci2blif/bcd_added_blocks/bcd_frame02.sci bcd_frame02.sci");
     //unix_w("sed -i "'s/bcd_cell_p/"+bcd_fname+"_cell_p"+"/g"' bcd_frame01.sci bcd_frame02.sci");
     //unix_w("sed -i "'s/bcd_cell_i/"+bcd_fname+"_cell_i"+"/g"' bcd_frame01.sci bcd_frame02.sci");
     
@@ -50,7 +50,7 @@ function bcd_xcosgen_callback()
     while inputs_temp(1) == "b" | inputs_temp(1) == "c"
         
         if inputs_temp(1) == "b" then
-            fd_r1 = mopen("/home/ubuntu/rasp30/sci2blif/bcd_added_blocks/bcd_"+inputs_temp(2)+".sci",'r');  // inputs_temp(2) : block name
+            fd_r1 = mopen("~/rasp30/sci2blif/bcd_added_blocks/bcd_"+inputs_temp(2)+".sci",'r');  // inputs_temp(2) : block name
             bcd_b_info1=mgetl(fd_r1, 1); bcd_b_info1=strsplit(bcd_b_info1,',',100); No_of_b_in=strtod(bcd_b_info1(2)); No_of_b_out=strtod(bcd_b_info1(3));
             No_of_exprs=strtod(bcd_b_info1(4)); //b_height=strtod(bcd_b_info1(4)); b_width=strtod(bcd_b_info1(5));
             bcd_b_info2=mgetl(fd_r1, 1); bcd_b_info2=strsplit(bcd_b_info2,',',100); No_of_ipar=strtod(bcd_b_info2(1));

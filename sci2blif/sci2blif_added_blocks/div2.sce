@@ -27,7 +27,7 @@ if (blk_name.entries(bl) =='div2') then
     mputl(prime_opnet,fd_w2);
     mclose(fd_w2);
 
-    unix_w(' perl /home/ubuntu/rasp30/vtr_release/vtr_flow/scripts/run_vtr_flow.pl '+ scs_m.objs(bl).model.opar(1) +' /home/ubuntu/rasp30/vtr_release/vpr/ARCH/arch.xml -ending_stage scripts -no_mem'); ///home/ubuntu/rasp30/vpr2swcs/arch/rasp3_arch.xml
+    unix_w(' perl ~/rasp30/vtr_release/vtr_flow/scripts/run_vtr_flow.pl '+ scs_m.objs(bl).model.opar(1) +' ~/rasp30/vtr_release/vpr/ARCH/arch.xml -ending_stage scripts -no_mem'); //~/rasp30/vpr2swcs/arch/rasp3_arch.xml
     unix_w('pwd ') ;
     unix_w('cp temp/'+blname+'.pre-vpr.blif  ./'+blname+ '.blif -rf'); 
     unix_g('pwd ') ;

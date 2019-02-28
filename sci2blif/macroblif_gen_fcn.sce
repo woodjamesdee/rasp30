@@ -31,13 +31,13 @@ function Start_MB_design_callback()
     global Macroblif_name folder_name;
     
     // Macro cab block name overlap check
-    file_list=listfiles("/home/ubuntu/rasp30/xcos_blocks/*.sci");
+    file_list=listfiles("~/rasp30/xcos_blocks/*.sci");
     l_file_list=size(file_list,1);
     for ii=1:l_file_list
-        if file_list(ii) == "/home/ubuntu/rasp30/xcos_blocks/"+Macroblif_name+".sci" then messagebox('Please change the name of macro-cab block.', "Macroblock name error", "error"); abort; end
+        if file_list(ii) == "~/rasp30/xcos_blocks/"+Macroblif_name+".sci" then messagebox('Please change the name of macro-cab block.', "Macroblock name error", "error"); abort; end
     end
     
-    temp_string="/home/ubuntu/RASP_Workspace/"+folder_name;
+    temp_string="~/RASP_Workspace/"+folder_name;
     mkdir(temp_string);
     cd(temp_string);
     xcos(Macroblif_name+".xcos");
@@ -48,7 +48,7 @@ function Generate_MB_callback()
     global Macroblif_name file_name path fname extension board_num chip_num bl_level;
     
     // Compile and generate blif,pad files
-    file_name = "/home/ubuntu/RASP_Workspace/"+folder_name+"/"+Macroblif_name+".xcos";
+    file_name = "~/RASP_Workspace/"+folder_name+"/"+Macroblif_name+".xcos";
     show_dsgnmatrics=0;board_num=2;chip_num="21";
     extension = '.xcos';
     Compile_Design_callback();
@@ -123,7 +123,7 @@ function Generate_MB_callback()
         col_mblif_xcos2=1;
         str_temp=mgetl(fd_r, 1); str_temp=strsplit(str_temp,[" ";"=";"&"],100); // 8th line
         // Read Block information
-        fd_r1 = mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+ele_index(2)+'.sci','r');
+        fd_r1 = mopen("~/rasp30/sci2blif/block_info/bi_"+ele_index(2)+'.sci','r');
         mgetl(fd_r1, 1);mgetl(fd_r1, 1);mgetl(fd_r1, 1); // Xcos information is not used here. Block info 1-3 lines
         blif_info_line4=mgetl(fd_r1, 1); blif_info_line4=strsplit(blif_info_line4,',',100);
         blif_info_line5=mgetl(fd_r1, 1); blif_info_line5=strsplit(blif_info_line5,',',100);
@@ -261,7 +261,7 @@ function Generate_MB_callback()
     //////////////////////////////////
     // Write Block information file 
     //////////////////////////////////
-    fd_w= mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+Macroblif_name+".sci",'wt');
+    fd_w= mopen("~/rasp30/sci2blif/block_info/bi_"+Macroblif_name+".sci",'wt');
     str_temp01=mblif_xcos(1,1)+","+mblif_xcos(1,2)+","+mblif_xcos(1,3)+","+mblif_xcos(1,4);
     str_temp02=mblif_xcos(2,1)+","+mblif_xcos(2,2)+","+mblif_xcos(2,3);
     str_temp03=mblif_xcos(3,1);
@@ -318,7 +318,7 @@ function Generate_MB_callback()
     //////////////////////////////////
     mblif_xcos_r=[""];
     ele_index_r=[""];
-    fd_r = mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+Macroblif_name+".sci",'r');
+    fd_r = mopen("~/rasp30/sci2blif/block_info/bi_"+Macroblif_name+".sci",'r');
     for i=1:7
         str_temp=mgetl(fd_r, 1); str_temp=strsplit(str_temp,[","],100);str_size=size(str_temp);
         for j=1:str_size(1)
@@ -371,7 +371,7 @@ function Generate_MB_callback()
         model_out=model_out+"-1";
         if i~=output_num then model_out=model_out+";"; end
     end
-    fd_w= mopen ("/home/ubuntu/rasp30/xcos_blocks/"+Macroblif_name+".sci",'wt');
+    fd_w= mopen ("~/rasp30/xcos_blocks/"+Macroblif_name+".sci",'wt');
     //fd_w= mopen (mblif_name+"_xcos.sci",'wt');
     mputl("function [x,y,typ]="+mblif_name+"(job,arg1,arg2)",fd_w);
     mputl("    x=[];y=[];typ=[];",fd_w);
@@ -420,7 +420,7 @@ function Generate_MB_callback()
     //////////////////////////////////////////////
     // Generate rasp_design function 
     //////////////////////////////////////////////
-    fd_w= mopen ("/home/ubuntu/rasp30/sci2blif/rasp_design_added_blocks/"+Macroblif_name+".sce",'wt');
+    fd_w= mopen ("~/rasp30/sci2blif/rasp_design_added_blocks/"+Macroblif_name+".sce",'wt');
     //fd_w= mopen (mblif_name+"_rasp_design.sce",'wt');
     mputl("style.fontSize=12;",fd_w);
     mputl("style.displayedLabel="""+mblif_name+""";",fd_w);
@@ -432,7 +432,7 @@ function Generate_MB_callback()
     // Generate sci2blif function
     //////////////////////////////////////////////
     blif_bl_num=strtod(mblif_xcos_r(7,1)); // # of BLIF blocks
-    fd_w= mopen ("/home/ubuntu/rasp30/sci2blif/sci2blif_added_blocks/"+Macroblif_name+".sce",'wt');
+    fd_w= mopen ("~/rasp30/sci2blif/sci2blif_added_blocks/"+Macroblif_name+".sce",'wt');
     //fd_w= mopen (mblif_name+"_sci2blif.sce",'wt');
     mputl("//**************************** "+mblif_name+" **********************************",fd_w);
     mputl("if (blk_name.entries(bl) == """+mblif_name+""") then",fd_w);
@@ -528,7 +528,7 @@ function Generate_MB_callback()
     // Generate sci2blif function
     //////////////////////////////////////////////
     if vcc_flag == 1 | gnd_flag == 1 then
-        fd_w= mopen ("/home/ubuntu/rasp30/sci2blif/sci2pads_added_blocks/"+Macroblif_name+".sce",'wt');
+        fd_w= mopen ("~/rasp30/sci2blif/sci2pads_added_blocks/"+Macroblif_name+".sce",'wt');
         mputl("if (blk_name.entries(bl) == """+Macroblif_name+""") then",fd_w);
         if vcc_flag then mputl("    fix_vdd = 1;",fd_w); end
         if gnd_flag then mputl("    fix_gnd = 1;",fd_w); end
@@ -536,7 +536,7 @@ function Generate_MB_callback()
         mclose(fd_w);
     end
     
-    unix_w("cp "+Macroblif_name+".xcos /home/ubuntu/rasp30/sci2blif/xcos_ref/macroblif_generation/");
+    unix_w("cp "+Macroblif_name+".xcos ~/rasp30/sci2blif/xcos_ref/macroblif_generation/");
     
     disp("Macro-BLIF block has been generated.");
     //disp(string(No_of_para_sci2blif)+"="+string(No_of_para_xcos)+"? (should be same.)")

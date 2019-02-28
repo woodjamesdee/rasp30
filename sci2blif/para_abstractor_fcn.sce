@@ -14,10 +14,10 @@ function Generate_MB_callback()
     global para_abs_name;
     para_abs_name="bi_fgota.sci";
     
-    file_list=listfiles("/home/ubuntu/rasp30/sci2blif/block_info/*.sci");
+    file_list=listfiles("~/rasp30/sci2blif/block_info/*.sci");
     l_file_list=size(file_list,1);
     for ii=1:l_file_list
-        if file_list(ii) == "/home/ubuntu/rasp30/sci2blif/block_info/"+para_abs_name+".sci" then messagebox('The block does not exist. Please check the block name.', "an error", "error"); abort; end
+        if file_list(ii) == "~/rasp30/sci2blif/block_info/"+para_abs_name+".sci" then messagebox('The block does not exist. Please check the block name.', "an error", "error"); abort; end
     end
     
     //////////////////////////////////
@@ -25,7 +25,7 @@ function Generate_MB_callback()
     //////////////////////////////////
     mblif_xcos_r=[""];
     ele_index_r=[""];
-    fd_r = mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+Macroblif_name+".sci",'r');
+    fd_r = mopen("~/rasp30/sci2blif/block_info/bi_"+Macroblif_name+".sci",'r');
     for i=1:7
         str_temp=mgetl(fd_r, 1); str_temp=strsplit(str_temp,[","],100);str_size=size(str_temp);
         for j=1:str_size(1)
@@ -117,7 +117,7 @@ function Generate_MB_callback()
         col_mblif_xcos2=1;
         str_temp=mgetl(fd_r, 1); str_temp=strsplit(str_temp,[" ";"=";"&"],100); // 8th line
         // Read Block information
-        fd_r1 = mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+ele_index(2)+'.sci','r');
+        fd_r1 = mopen("~/rasp30/sci2blif/block_info/bi_"+ele_index(2)+'.sci','r');
         mgetl(fd_r1, 1);mgetl(fd_r1, 1);mgetl(fd_r1, 1); // Xcos information is not used here. Block info 1-3 lines
         blif_info_line4=mgetl(fd_r1, 1); blif_info_line4=strsplit(blif_info_line4,',',100);
         blif_info_line5=mgetl(fd_r1, 1); blif_info_line5=strsplit(blif_info_line5,',',100);

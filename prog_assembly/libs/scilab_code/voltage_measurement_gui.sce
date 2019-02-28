@@ -42,7 +42,7 @@ if GPIO_IN_check==0 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6000 -length 1000 -output_file_name output_vector");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
 end
 
@@ -57,7 +57,7 @@ if GPIO_IN_check==1 then
             [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x6000 -length 1000 -output_file_name output_vector");
         end
         if (b1==0) & (b2==0) & (b3==0) & (b4==0) & (b5==0) then break end // 0 if no error occurred, 1 if error.
-        if (b1==1) | (b2==1) | (b3==1) | (b4==1) | (b5==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+        if (b1==1) | (b2==1) | (b3==1) | (b4==1) | (b5==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
     end
 end
 

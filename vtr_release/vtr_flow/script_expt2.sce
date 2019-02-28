@@ -144,16 +144,16 @@ disp("numips",numofip);
      
  //elseif(blk_name.entries(bl) ~='IN_f' | blk_name.entries(bl) ~='OUT_f') then
 elseif (blk_name.entries(bl) =='div2') then
-    chdir /home/ubuntu/Downloads/vtr_release/vtr_flow
-    unix_g(' perl /home/ubuntu/Downloads/vtr_release/vtr_flow/scripts/run_vtr_flow.pl /home/ubuntu/Downloads/vtr_release/vtr_flow/benchmarks/verilog/divBy2.v /home/ubuntu/Downloads/vtr_release/vtr_flow/arch/timing/k6_N10_memDepth16384_memData64_40nm_timing.xml -ending_stage scripts')
-    unix_g('cp /home/ubuntu/Downloads/vtr_release/vtr_flow/temp/div*  /home/ubuntu/Downloads/vtr_release/vtr_flow/') 
-    //unix_g('cd /home/ubuntu/Downloads/vtr_release/vtr_flow ')
+    chdir ~/Downloads/vtr_release/vtr_flow
+    unix_g(' perl ~/Downloads/vtr_release/vtr_flow/scripts/run_vtr_flow.pl ~/Downloads/vtr_release/vtr_flow/benchmarks/verilog/divBy2.v ~/Downloads/vtr_release/vtr_flow/arch/timing/k6_N10_memDepth16384_memData64_40nm_timing.xml -ending_stage scripts')
+    unix_g('cp ~/Downloads/vtr_release/vtr_flow/temp/div*  ~/Downloads/vtr_release/vtr_flow/') 
+    //unix_g('cd ~/Downloads/vtr_release/vtr_flow ')
     
     unix_g('pwd ') 
     unix_g('bash genblif.sh ') 
     //unix_g('cd  /usr/lib/scicoslab-gtk-4.4.1/macros/scicos_blocks/cadsp/')
     chdir /usr/lib/scicoslab-gtk-4.4.1/macros/scicos_blocks/cadsp/
-    unix_g('cp /home/ubuntu/Downloads/vtr_release/vtr_flow/div2.blif .')
+    unix_g('cp ~/Downloads/vtr_release/vtr_flow/div2.blif .')
     unix_g('cat div2.blif >> expt2.blif ')
   end;
   end;//for

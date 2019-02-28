@@ -72,7 +72,7 @@ drain_dac_ivdd60V(counter,2) =M;
 end
 
 if reset_count==10 then
-   unix_s('/home/ubuntu/rasp30/sci2blif/usbreset');
+   unix_s('~/rasp30/sci2blif/usbreset');
    reset_count=0;
 end
 

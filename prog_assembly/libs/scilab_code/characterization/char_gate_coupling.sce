@@ -8,7 +8,7 @@ while 1==1,
     [a1,b1]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/program.tcl -speed 115200 tunnel_revtun_SWC_CAB.elf");
     if (b1==0) then break end // 0 if no error occurred, 1 if error.
     disp("connection issue -> it is trying again");
-    unix_w('/home/ubuntu/rasp30/sci2blif/usbreset');
+    unix_w('~/rasp30/sci2blif/usbreset');
     sleep(2000);
 end
 
@@ -20,7 +20,7 @@ while 1==1,
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name char_gate_coupling_swc.hex");
     end
     if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
 end
 
 clear data_swc; m_graph=4; data_swc=read_tar_pgm_result('char_gate_coupling_swc.hex',m_graph,time_scale);
@@ -64,7 +64,7 @@ while 1==1,
     [a1,b1]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/program.tcl -speed 115200 tunnel_revtun_SWC_CAB.elf");
     if (b1==0) then break end // 0 if no error occurred, 1 if error.
     disp("connection issue -> it is trying again");
-    unix_w('/home/ubuntu/rasp30/sci2blif/usbreset');
+    unix_w('~/rasp30/sci2blif/usbreset');
     sleep(2000);
 end
 
@@ -76,7 +76,7 @@ while 1==1,
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name char_gate_coupling_ota.hex");
     end
     if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
 end
 
 clear data_ota; m_graph=4; data_ota=read_tar_pgm_result('char_gate_coupling_ota.hex',m_graph,time_scale);
@@ -121,7 +121,7 @@ while 1==1,
     [a1,b1]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/program.tcl -speed 115200 tunnel_revtun_SWC_CAB.elf");
     if (b1==0) then break end // 0 if no error occurred, 1 if error.
     disp("connection issue -> it is trying again");
-    unix_w('/home/ubuntu/rasp30/sci2blif/usbreset');
+    unix_w('~/rasp30/sci2blif/usbreset');
     sleep(2000);
 end
 
@@ -133,7 +133,7 @@ while 1==1,
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name char_gate_coupling_otaref.hex");
     end
     if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
 end
 
 clear data_otaref; m_graph=4; data_otaref=read_tar_pgm_result('char_gate_coupling_otaref.hex',m_graph,time_scale);
@@ -179,7 +179,7 @@ while 1==1,
     [a1,b1]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/program.tcl -speed 115200 tunnel_revtun_SWC_CAB.elf");
     if (b1==0) then break end // 0 if no error occurred, 1 if error.
     disp("connection issue -> it is trying again");
-    unix_w('/home/ubuntu/rasp30/sci2blif/usbreset');
+    unix_w('~/rasp30/sci2blif/usbreset');
     sleep(2000);
 end
 
@@ -191,7 +191,7 @@ while 1==1,
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name char_gate_coupling_mite.hex");
     end
     if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
 end
 
 clear data_mite; m_graph=4; data_mite=read_tar_pgm_result('char_gate_coupling_mite.hex',m_graph,time_scale);
@@ -236,7 +236,7 @@ while 1==1,
     [a1,b1]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/program.tcl -speed 115200 tunnel_revtun_SWC_CAB.elf");
     if (b1==0) then break end // 0 if no error occurred, 1 if error.
     disp("connection issue -> it is trying again");
-    unix_w('/home/ubuntu/rasp30/sci2blif/usbreset');
+    unix_w('~/rasp30/sci2blif/usbreset');
     sleep(2000);
 end
 
@@ -248,7 +248,7 @@ while 1==1,
         [a4,b4]=unix_g("sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x5000 -length 7000 -output_file_name char_gate_coupling_dirswc.hex");
     end
     if (b1==0) & (b2==0) & (b3==0) & (b4==0) then break end // 0 if no error occurred, 1 if error.
-    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('/home/ubuntu/rasp30/sci2blif/usbreset'); sleep(2000); end
+    if (b1==1) | (b2==1) | (b3==1) | (b4==1) then disp("connection issue -> it is trying again"); unix_w('~/rasp30/sci2blif/usbreset'); sleep(2000); end
 end
 
 clear data_dirswc; m_graph=4; data_dirswc=read_tar_pgm_result('char_gate_coupling_dirswc.hex',m_graph,time_scale);

@@ -1,4 +1,4 @@
-<block name="/home/ubuntu/RASP_Workspace/demo_files/LPF//lpf_meas.net" instance="FPGA_packed_netlist[0]">
+<block name="~/RASP_Workspace/demo_files/LPF//lpf_meas.net" instance="FPGA_packed_netlist[0]">
 	<inputs>
 		net1_1 
 	</inputs>

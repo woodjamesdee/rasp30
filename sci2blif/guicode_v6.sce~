@@ -30,16 +30,16 @@ handles.Program_Netlist=uicontrol(gui,'unit','normalized','BackgroundColor',[0.8
 handles.Choose_Swc_List=uicontrol(gui,'unit','normalized','BackgroundColor',[0.8,0.8,0.8],'Enable','on','FontAngle','normal','FontName','mukti narrow','FontSize',[12],'FontUnits','points','FontWeight','bold','ForegroundColor',[0,0,0],'HorizontalAlignment','center','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.54,0.18,0.4,0.08],'Relief','raised','SliderStep',[0.01,0.1],'String','Choose Switches','Style','pushbutton','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','Choose_Swc_List','Callback','Choose_Swc_List_callback(handles)');
 handles.Program_SwcList=uicontrol(gui,'unit','normalized','BackgroundColor',[0.8,0.8,0.8],'Enable','on','FontAngle','normal','FontName','mukti narrow','FontSize',[12],'FontUnits','points','FontWeight','bold','ForegroundColor',[0,0,0],'HorizontalAlignment','center','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.54,0.0787,0.4,0.08],'Relief','raised','SliderStep',[0.01,0.1],'String','Program Switches','Style','pushbutton','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','Program_SwcList','Callback','Program_SwcList_callback(handles)');
 
-exec('/home/ubuntu/rasp30/sci2blif/fpaacal_fcn.sce',-1);
-exec('/home/ubuntu/rasp30/sci2blif/macroblif_gen_fcn.sce',-1);
-exec('/home/ubuntu/rasp30/sci2blif/macrocab_gen_fcn.sce',-1);
-exec('/home/ubuntu/rasp30/sci2blif/level1_sim_gen_fcn.sce',-1);
-exec('/home/ubuntu/rasp30/sci2blif/block_doc_gen_fcn.sce',-1);
-exec('/home/ubuntu/rasp30/sci2blif/send_email_ip_pw_fcn.sce',-1);
-exec('/home/ubuntu/rasp30/sci2blif/dsgnmtrcs_fcn.sce',-1);
-//exec("/home/ubuntu/rasp30/sci2blif/dsgnmtrcs.sce",-1);
-exec('/home/ubuntu/rasp30/sci2blif/bcd_fcn.sce',-1);
-exec("/home/ubuntu/rasp30/sci2blif/demo_examples/example_inputs.sce");
+exec('~/rasp30/sci2blif/fpaacal_fcn.sce',-1);
+exec('~/rasp30/sci2blif/macroblif_gen_fcn.sce',-1);
+exec('~/rasp30/sci2blif/macrocab_gen_fcn.sce',-1);
+exec('~/rasp30/sci2blif/level1_sim_gen_fcn.sce',-1);
+exec('~/rasp30/sci2blif/block_doc_gen_fcn.sce',-1);
+exec('~/rasp30/sci2blif/send_email_ip_pw_fcn.sce',-1);
+exec('~/rasp30/sci2blif/dsgnmtrcs_fcn.sce',-1);
+//exec("~/rasp30/sci2blif/dsgnmtrcs.sce",-1);
+exec('~/rasp30/sci2blif/bcd_fcn.sce',-1);
+exec("~/rasp30/sci2blif/demo_examples/example_inputs.sce");
 
 //Add custom menus
 file_menu = uimenu("Parent", gui, "Label", gettext("Examples"),'ForegroundColor',[1,1,1]);
@@ -181,11 +181,11 @@ function Compile_Design_callback(handles)
     if(extension == '.xcos') then
         importXcosDiagram(file_name);
         clc;
-        if show_dsgnmatrics == 0 then pass_num=1; cap_info = tlist('capinfo'); exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1); end
+        if show_dsgnmatrics == 0 then pass_num=1; cap_info = tlist('capinfo'); exec('~/rasp30/sci2blif/sci2blif.sce', -1); end
         if show_dsgnmatrics == 1 then
-            exec("/home/ubuntu/rasp30/sci2blif/dsgnmtrcs.sce",-1);
-            pass_num=1; cap_info = tlist('capinfo'); exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1);
-            pass_num=2; exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1);
+            exec("~/rasp30/sci2blif/dsgnmtrcs.sce",-1);
+            pass_num=1; cap_info = tlist('capinfo'); exec('~/rasp30/sci2blif/sci2blif.sce', -1);
+            pass_num=2; exec('~/rasp30/sci2blif/sci2blif.sce', -1);
             Board_settings();
             Design_Metrics();
         end
@@ -234,30 +234,30 @@ function Program_Design_callback(handles)
             
             winH=progressionbar(['-> '+string_tun_revtun string_prog_swc string_prog_tar string_dc_setup]);
             tic(); realtimeinit(1); realtime(0); realtime(2);
-            exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+            exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
             time1=toc(); string_tun_revtun='Tunnel & Rev. tunnel ('+string(time1)+'/'+string(tun_revtun_time)+'s)';
             disp('tunnel, reverse tunnel done');
             progressionbar(winH,[string_tun_revtun '-> '+string_prog_swc string_prog_tar string_dc_setup]);
             tic(); realtimeinit(1); realtime(0); realtime(2);
-            exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
+            exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
             time1=toc(); string_prog_swc='Program Switches ('+string(time1)+'/'+string(swc_prog_time)+'s)';
             disp('switch_program done');
             progressionbar(winH,[string_tun_revtun string_prog_swc '-> '+string_prog_tar string_dc_setup]);
             tic(); realtimeinit(1); realtime(0); realtime(2);
-            exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
+            exec('~/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
             time1=toc(); string_prog_tar='Program Target FGs ('+string(time1)+'/'+string(tar_prog_time)+'s)';
             disp('target_program done');
             b1=unix("ls "+hid_dir+"/switch_list_ble");
             if (b1==0) then
                 progressionbar(winH,[string_tun_revtun string_prog_swc string_prog_tar '-> Program ble switches' string_dc_setup]);
-                exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_clb_ver00_gui.sce', -1);
+                exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_clb_ver00_gui.sce', -1);
                 disp('tunnel , reverse tunnel for clb done');
-                exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ble_ver00_gui.sce', -1);
+                exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ble_ver00_gui.sce', -1);
                 disp('switch_program for ble done');
             end
             progressionbar(winH,[string_tun_revtun string_prog_swc string_prog_tar '-> '+string_dc_setup]);
             tic(); realtimeinit(1); realtime(0); realtime(2);
-//            exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+//            exec('~/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
             time1=toc(); string_dc_setup='DC setup ('+string(time1)+'/'+string(dc_time)+'s)';
             disp('DC setup done');
             disp("Programming Completed...Ready to Take Data");
@@ -289,12 +289,12 @@ function View_Routing_callback(handles)
         if(x ~= []) then //pads file is in hidden dir
             vprinfo();
             unix_s('mv ' + hid_dir+'/' +fname' + '.pads '+ hid_dir+'/' +fname' + '.place '+ hid_dir+'/' +fname' + '.net '+ hid_dir+'/' +fname' + '.route '+ path); 
-            //if plcvpr & addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm -route' + brdtype +' -v');
-            if plcvpr & addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -route' + brdtype +' -v');
-            elseif plcvpr then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path+ ' -route' + brdtype+' -v');
-            //elseif addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm' + brdtype+' -v');
-            elseif addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
-            else unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
+            //if plcvpr & addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm -route' + brdtype +' -v');
+            if plcvpr & addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -route' + brdtype +' -v');
+            elseif plcvpr then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path+ ' -route' + brdtype+' -v');
+            //elseif addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm' + brdtype+' -v');
+            elseif addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
+            else unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
             end
             unix_s('mv ' + fname' + '.pads ' + fname + '.place ' + fname + '.net ' + fname + '.route ' +hid_dir);
             filebrowser();
@@ -302,12 +302,12 @@ function View_Routing_callback(handles)
             x = fileinfo(fname' + '.pads');
             if(x ~= []) then //pads file in current dir
                 vprinfo();
-                //if plcvpr & addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm -route' + brdtype +' -v');
-                if plcvpr & addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -route' + brdtype +' -v');
-                elseif plcvpr then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path+ ' -route' + brdtype+' -v');
-                //elseif addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm' + brdtype+' -v');
-                elseif addvmm then unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
-                else unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
+                //if plcvpr & addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm -route' + brdtype +' -v');
+                if plcvpr & addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -route' + brdtype +' -v');
+                elseif plcvpr then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path+ ' -route' + brdtype+' -v');
+                //elseif addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + ' -vmm' + brdtype+' -v');
+                elseif addvmm then unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
+                else unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path + brdtype+' -v');
                 end
                 unix_s('mv ' + fname' + '.pads ' + fname + '.place ' + fname + '.net ' + fname + '.route ' +hid_dir);
                 filebrowser();
@@ -320,13 +320,13 @@ endfunction
 
 function Take_Data_callback(handles)
     disp('Taking Data...');
-    //exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+    //exec('~/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
     //disp('DC setup done');
     global RAMP_ADC_check sftreg_check Signal_DAC_check GPIO_IN_check MITE_ADC_check ONchip_ADC;
     //global RAMP_ADC_check;//had to add this for ramp
     if (Signal_DAC_check==1) & (GPIO_IN_check==0) & (RAMP_ADC_check==1) then noDAC=1; exec("~/rasp30/prog_assembly/libs/scilab_code/Ramp_ADC_voltage.sce",-1);
     elseif (Signal_DAC_check==1) & (GPIO_IN_check==0) & (ONchip_ADC==1) then exec("~/rasp30/prog_assembly/libs/scilab_code/ADC_onchip.sce",-1); [Out,out_volt] = ADC(1);
-    else exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/voltage_measurement_gui.sce', -1);
+    else exec('~/rasp30/prog_assembly/libs/scilab_code/voltage_measurement_gui.sce', -1);
     end    
     disp("Data Collected ");
     filebrowser();
@@ -338,15 +338,15 @@ function Send_Email_callback(handles)
     if (email_name == []) then
         messagebox(["Please provide your email address in the designated location."], "No Netlist Selected", "warning");
     else
-        exec('/home/ubuntu/rasp30/sci2blif/send_email_ip_pw.sce',-1);
+        exec('~/rasp30/sci2blif/send_email_ip_pw.sce',-1);
     end
 endfunction
 
 function Load_Data_callback(handles)
     global path fname rm_results;
     disp("Loading Data...");
-    unix_s('python /home/ubuntu/rasp30/sci2blif/rmunzip.py ' + path)
-    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/outhexfile2voltfile_gui.sce', -1);
+    unix_s('python ~/rasp30/sci2blif/rmunzip.py ' + path)
+    exec('~/rasp30/prog_assembly/libs/scilab_code/outhexfile2voltfile_gui.sce', -1);
     rm_results=fscanfMat(path + fname +'.data')
     figure();plot(rm_results)
     disp("Your data is loaded and saved in the variable rm_results. It can also be located in the Variable Browser.");
@@ -375,34 +375,34 @@ function Program_Netlist_callback(handles)
             if(x ~= []) then //pads file is in hidden dir
                 unix_s('mv ' + hid_dir+'/' +fname' + '.pads '+ path); 
                 disp("Determining the Switch List...");
-                unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path);
+                unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path);
                 unix_s('mv ' + fname' + '.pads ' + fname + '.place ' + fname + '.net ' + fname + '.route ' +hid_dir);
                 disp("Switch List Created.");
                 filebrowser();
                 disp('Programming...')
                 exec("~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce",-1);
-                exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+                exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
                 disp('tunnel , reverse tunnel done');
-                exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
+                exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
                 disp('switch_program done');
-                exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
+                exec('~/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
                 disp('target_program done');
                 disp("Programming Completed...Ready to Take Data");
             else //pads not in hidden dir
                 x = fileinfo(fname + '.pads')
                 if(x ~= []) then //pads file in current dir
                     disp("Determining the Switch List...");
-                    unix_s('python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path);
+                    unix_s('python ~/rasp30/vpr2swcs/genswcs.py -c ' + path + fname + ' -d '+ path);
                     unix_s('mv ' + fname' + '.pads ' + fname + '.place ' + fname + '.net ' + fname + '.route ' +hid_dir);
                     disp("Switch List Created.");
                     filebrowser();
                     disp('Programming...')
                     exec("~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce",-1);
-                    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+                    exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
                     disp('tunnel , reverse tunnel done');
-                    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
+                    exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
                     disp('switch_program done');
-                    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
+                    exec('~/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
                     disp('target_program done');
                     disp("Programming Completed...Ready to Take Data");
                 else
@@ -469,30 +469,30 @@ function Program_SwcList_callback(handles)
         
         winH=progressionbar(['-> '+string_tun_revtun string_prog_swc string_prog_tar string_dc_setup]);
         tic(); realtimeinit(1); realtime(0); realtime(2);
-       //exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+       //exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
         time1=toc(); string_tun_revtun='Tunnel & Rev. tunnel ('+string(time1)+'/'+string(tun_revtun_time)+'s)';
         disp('tunnel, reverse tunnel done');
         progressionbar(winH,[string_tun_revtun '-> '+string_prog_swc string_prog_tar string_dc_setup]);
         tic(); realtimeinit(1); realtime(0); realtime(2);
-        exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
+        exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
         time1=toc(); string_prog_swc='Program Switches ('+string(time1)+'/'+string(swc_prog_time)+'s)';
         disp('switch_program done');
         progressionbar(winH,[string_tun_revtun string_prog_swc '-> '+string_prog_tar string_dc_setup]);
         tic(); realtimeinit(1); realtime(0); realtime(2);
-        exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
+        exec('~/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
         time1=toc(); string_prog_tar='Program Target FGs ('+string(time1)+'/'+string(tar_prog_time)+'s)';
         disp('target_program done');
         b1=unix("ls "+hid_dir+"/switch_list_ble");
         if (b1==0) then
             progressionbar(winH,[string_tun_revtun string_prog_swc string_prog_tar '-> Program ble switches' string_dc_setup]);
-            //exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_clb_ver00_gui.sce', -1);
+            //exec('~/rasp30/prog_assembly/libs/scilab_code/tunnel_clb_ver00_gui.sce', -1);
             disp('tunnel , reverse tunnel for clb done');
-            exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ble_ver00_gui.sce', -1);
+            exec('~/rasp30/prog_assembly/libs/scilab_code/switch_program_ble_ver00_gui.sce', -1);
             disp('switch_program for ble done');
         end
         progressionbar(winH,[string_tun_revtun string_prog_swc string_prog_tar '-> '+string_dc_setup]);
         tic(); realtimeinit(1); realtime(0); realtime(2);
-        exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+        exec('~/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
         time1=toc(); string_dc_setup='DC setup ('+string(time1)+'/'+string(dc_time)+'s)';
         disp('DC setup done');
         disp("Programming Completed...Ready to Take Data");
@@ -505,16 +505,16 @@ endfunction
 
 function Reset_Com_callback(handles)
     disp('Resetting USB connections...');
-    unix_s('/home/ubuntu/rasp30/sci2blif/usbreset');
+    unix_s('~/rasp30/sci2blif/usbreset');
     disp('Done!');
 endfunction
 
 function demo_example_callback(demo_fname,com_prep_index,arb_msg_index)
     global file_name path fname extension;
-    unix_g("mkdir /home/ubuntu/RASP_Workspace/demo_examples/");
-    unix_g("mkdir /home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname);
-    unix_s("cp /home/ubuntu/rasp30/sci2blif/demo_examples/"+demo_fname+".xcos /home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/");
-    file_name= '/home/ubuntu/RASP_Workspace/demo_examples/"+demo_fname+"/"+demo_fname+".xcos'; disp(demo_fname); disp(file_name);
+    unix_g("mkdir ~/RASP_Workspace/demo_examples/");
+    unix_g("mkdir ~/RASP_Workspace/demo_examples/"+demo_fname);
+    unix_s("cp ~/rasp30/sci2blif/demo_examples/"+demo_fname+".xcos ~/RASP_Workspace/demo_examples/"+demo_fname+"/");
+    file_name= '~/RASP_Workspace/demo_examples/"+demo_fname+"/"+demo_fname+".xcos'; disp(demo_fname); disp(file_name);
     [path,fname,extension]=fileparts(file_name);
     cd(path);
     filebrowser();
@@ -554,7 +554,7 @@ function up2_callback()
 endfunction
 
 function open_document(doc_name)
-    [a,b]=unix_g("acroread /home/ubuntu/rasp30/sci2blif/documentation/"+doc_name+" &"); 
+    [a,b]=unix_g("acroread ~/rasp30/sci2blif/documentation/"+doc_name+" &"); 
     if b == 1 then messagebox("Install Adobe Reader via the Documents menu. ", "Adode Reader not installed yet!", "scilab"); end
 endfunction
 
@@ -566,38 +566,38 @@ function doc6_callback()
     unix_g('sudo apt-get -y install gdebi'); 
     unix_g('sudo apt-get -y install libgnome2-0');
     disp('Step 2 of 3');
-    unix_g('cd /home/ubuntu/rasp30/sci2blif/documentation && sudo gdebi -n AdbeRdr9.5.5-1_i386linux_enu.deb');
+    unix_g('cd ~/rasp30/sci2blif/documentation && sudo gdebi -n AdbeRdr9.5.5-1_i386linux_enu.deb');
     disp('Step 3 of 3');
     unix_s('cd '+path); 
     messagebox(['When you select a document to view, please wait for the End User Agreement window to appear and Press OK.'],'Adobe Reader is now installed!', "info");
 endfunction
 
 function gui1_callback()
-    exec('/home/ubuntu/rasp30/sci2blif/fpaacal.sce',-1);
+    exec('~/rasp30/sci2blif/fpaacal.sce',-1);
 endfunction
 
 function gui4_callback()
-    exec("/home/ubuntu/rasp30/sci2blif/macroblif_gen_gui.sce");
+    exec("~/rasp30/sci2blif/macroblif_gen_gui.sce");
 endfunction
 
 function gui6_callback()
-    exec("/home/ubuntu/rasp30/sci2blif/macrocab_gen_gui.sce");
+    exec("~/rasp30/sci2blif/macrocab_gen_gui.sce");
 endfunction
 
 function gui9_callback()
-    exec("/home/ubuntu/rasp30/sci2blif/bcd_gui.sce");
+    exec("~/rasp30/sci2blif/bcd_gui.sce");
 endfunction
 
 function gui8_callback()
-    exec("/home/ubuntu/rasp30/sci2blif/level1_sim_gen_gui.sce");
+    exec("~/rasp30/sci2blif/level1_sim_gen_gui.sce");
 endfunction
 
 function gui2_callback()
-    exec("/home/ubuntu/rasp30/sci2blif/block_doc_gen_gui.sce");
+    exec("~/rasp30/sci2blif/block_doc_gen_gui.sce");
 endfunction
 
 function gui5_callback()
-    exec("/home/ubuntu/rasp30/sci2blif/dsgnmtrcs.sce",-1);
+    exec("~/rasp30/sci2blif/dsgnmtrcs.sce",-1);
 endfunction
 
 function etc1_callback(handles)
@@ -619,8 +619,8 @@ function etc2_callback(handles)
     hid_dir=path+'.'+fname;
     unix_s('cp ' + hid_dir+'/input_vector '+ path); 
     exec("~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce",-1);
-    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/finetune_program_ver00_gui.sce', -1);
-    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+    exec('~/rasp30/prog_assembly/libs/scilab_code/finetune_program_ver00_gui.sce', -1);
+    exec('~/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
     disp('DC setup done');
     //unix_s('rm ' + path +'input_vector');
     disp("Programming Completed...Ready to Take Data"); 
@@ -658,7 +658,7 @@ function etc7_callback(handles)
     end
 endfunction 
 
-csvpath="/home/ubuntu/RASP_Workspace";
+csvpath="~/RASP_Workspace";
 
 function etc9_callback(handles)
     global csvdata
@@ -673,7 +673,7 @@ endfunction
 
 function etc10_callback(handles)
 
-    csvdir=uigetdir("/home/ubuntu/RASP_Workspace", "Choose a directory.")
+    csvdir=uigetdir("~/RASP_Workspace", "Choose a directory.")
     if ~(isempty(csvdir)) then
         csvf = x_mdialog("CSV File Setup",['Name of variable';'Name for CSV file'],['';'']);
         if ~(isempty(csvf(1))) & ~(isempty(csvf(2))) then
@@ -686,7 +686,7 @@ endfunction
 function etc14_callback(handles)
     global file_name path fname extension board_num chip_num;
     
-    path="/home/ubuntu/RASP_Workspace/compilation_check/";
+    path="~/RASP_Workspace/compilation_check/";
     mkdir(path);
     cd(path);
     file_name=path+"compile_check.xcos";
@@ -696,38 +696,38 @@ function etc14_callback(handles)
     // 3.0
     unix_w("rm -rf *.blif *.net *.place *.route ."+fname);
     board_num=2; chip_num="13";
-    unix_w("cp /home/ubuntu/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30.xcos "++fname+extension);
-    pass_num=1; cap_info = tlist('capinfo'); exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1);
+    unix_w("cp ~/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30.xcos "++fname+extension);
+    pass_num=1; cap_info = tlist('capinfo'); exec('~/rasp30/sci2blif/sci2blif.sce', -1);
     disp("3.0 example are compiled successfully!");
     
     // 3.0 vmm
     unix_w("rm -rf *.blif *.net *.place *.route ."+fname);
     board_num=2; chip_num="13";
     clk_sr=[0.2 0.2]; data_sr=[0.2 0.2]; input_vmmwta=[0.2 0.2; 0.2 0.2; 0.2 0.2; 0.2 0.2;];
-    unix_w("cp /home/ubuntu/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30_vmm.xcos "++fname+extension);
-    pass_num=1; cap_info = tlist('capinfo'); exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1);
+    unix_w("cp ~/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30_vmm.xcos "++fname+extension);
+    pass_num=1; cap_info = tlist('capinfo'); exec('~/rasp30/sci2blif/sci2blif.sce', -1);
     disp("3.0 VMM example are compiled successfully!");
     
     // 3.0a
     unix_w("rm -rf *.blif *.net *.place *.route ."+fname);
     board_num=3; chip_num="13";
-    unix_w("cp /home/ubuntu/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30.xcos "++fname+extension);
-    pass_num=1; cap_info = tlist('capinfo'); exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1);
+    unix_w("cp ~/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30.xcos "++fname+extension);
+    pass_num=1; cap_info = tlist('capinfo'); exec('~/rasp30/sci2blif/sci2blif.sce', -1);
     disp("3.0a example are compiled successfully!");
     
     // 3.0a vmm
     unix_w("rm -rf *.blif *.net *.place *.route ."+fname);
     board_num=3; chip_num="13";
     clk_sr=[0.2 0.2]; data_sr=[0.2 0.2]; input_vmmwta=[0.2 0.2; 0.2 0.2; 0.2 0.2; 0.2 0.2;];
-    unix_w("cp /home/ubuntu/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30_vmm.xcos "++fname+extension);
-    pass_num=1; cap_info = tlist('capinfo'); exec('/home/ubuntu/rasp30/sci2blif/sci2blif.sce', -1);
+    unix_w("cp ~/rasp30/sci2blif/xcos_ref/compilation_check/compile_check_30_vmm.xcos "++fname+extension);
+    pass_num=1; cap_info = tlist('capinfo'); exec('~/rasp30/sci2blif/sci2blif.sce', -1);
     disp("3.0a VMM example are compiled successfully!");
 endfunction
 
 function etc15_callback(handles)
     global file_name path fname extension board_num chip_num;
     clc
-    exec("/home/ubuntu/rasp30/sci2blif/convert2modelica.sce",-1);
+    exec("~/rasp30/sci2blif/convert2modelica.sce",-1);
     
     xcos()
 endfunction
@@ -768,14 +768,14 @@ endfunction
 
 function doc_block_callback()
     global fname;
-    [a,b]=unix_g('firefox /home/ubuntu/rasp30/sci2blif/documentation/block_docs/build/html/'+fname+'.html'); 
+    [a,b]=unix_g('firefox ~/rasp30/sci2blif/documentation/block_docs/build/html/'+fname+'.html'); 
     if b == 1 then
         messagebox("Error opening documentation. ", "Unable to open firefox! ", "scilab")
     end
 endfunction
 
 function doc_full_callback()
-    [a,b]=unix_g('firefox /home/ubuntu/rasp30/sci2blif/documentation/block_docs/build/html/index.html'); 
+    [a,b]=unix_g('firefox ~/rasp30/sci2blif/documentation/block_docs/build/html/index.html'); 
     if b == 1 then
         messagebox("Error opening documentation. ", "Unable to open firefox! ", "scilab")
     end

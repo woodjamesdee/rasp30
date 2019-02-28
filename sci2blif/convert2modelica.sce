@@ -30,7 +30,7 @@ while line_org < size_xcos_org(1)
     end
     if temp_str(1) == "BasicBlock" then
         // Convert each block
-        file_list=listfiles("/home/ubuntu/rasp30/sci2blif/con2mod_added_blocks/*.sce");
+        file_list=listfiles("~/rasp30/sci2blif/con2mod_added_blocks/*.sce");
         size_file_list=size(file_list);
         if file_list ~= [] then
             for i=1:size_file_list(1)

@@ -26,10 +26,10 @@ if (blk_name.entries(bl) =='div_by_n') then
     mputl(prime_ipnet,fd_w2);
     mputl(prime_opnet,fd_w2);
     mclose(fd_w2);
-    unix_w(' perl /home/ubuntu/rasp30/vtr_release/vtr_flow/scripts/run_vtr_flow.pl /home/ubuntu/rasp30/sci2blif/benchmarks/verilog/div_by_n.v /home/ubuntu/rasp30/vtr_release/vpr_rasp3/rasp3_arch.xml -ending_stage scripts -no_mem');
+    unix_w(' perl ~/rasp30/vtr_release/vtr_flow/scripts/run_vtr_flow.pl ~/rasp30/sci2blif/benchmarks/verilog/div_by_n.v ~/rasp30/vtr_release/vpr_rasp3/rasp3_arch.xml -ending_stage scripts -no_mem');
     unix_w('pwd ') ;
     unix_w('cp temp/div_by_n.pre-vpr.blif  ./'+digifl+' -rf'); 
-    //unix_w('cp /home/ubuntu/rasp30/vtr_release/vtr_flow/temp/div2.pre-vpr.blif  /home/ubuntu/rasp30/vtr_release/vtr_flow/div2.blif -rf'); 
+    //unix_w('cp ~/rasp30/vtr_release/vtr_flow/temp/div2.pre-vpr.blif  ~/rasp30/vtr_release/vtr_flow/div2.blif -rf'); 
     unix_w('pwd ') ;
     //disp("Copied files");
     unix_w('bash genblif.sh '+diginame) ;

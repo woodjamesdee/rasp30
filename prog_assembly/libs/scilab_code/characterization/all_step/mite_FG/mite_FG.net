@@ -1,4 +1,4 @@
-<block name="/home/ubuntu/RASP_Workspace/RASP_Workspace/Step_1/mite_FG/mite_FG.net" instance="FPGA_packed_netlist[0]">
+<block name="~/RASP_Workspace/RASP_Workspace/Step_1/mite_FG/mite_FG.net" instance="FPGA_packed_netlist[0]">
 	<inputs>
 		net1_1 
 	</inputs>

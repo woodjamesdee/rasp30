@@ -33,7 +33,7 @@ function [x,y,typ]=generic_dig(job,arg1,arg2)
     case 'define' then
         in=2
         out=1
-        vfpath = '/home/ubuntu/'
+        vfpath = '~/'
         model=scicos_model()
         model.sim=list('generic_dig_c',5)
         model.in=-[1:in]'

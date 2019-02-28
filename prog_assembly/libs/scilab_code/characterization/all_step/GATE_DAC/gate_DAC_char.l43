@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 1
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 1
 
 
    1               	.include "pmem_defs.asm"
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
   56               	.set    P1SEL,     0x0026
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 2
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 2
 
 
   57               	
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
  113               	.set    TAR,       0x0170
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 3
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 3
 
 
  114               	.set    TACCTL0,   0x0162
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 4
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 4
 
 
  171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 5
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 5
 
 
  228               	
@@ -298,7 +298,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/
   10               		
   11 0012 3540 0253 	    mov #0x5302, r5    
   12 0016 A245 6001 	    mov     @r5, &GP_PER_1      ; IVDD to 2.5v or 6.0V, Set vtun_ext = 12V, avdd_25 = 2.5 or 6.0V
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 6
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 6
 
 
   13 001a B240 0008 		mov 	#0X0800, &GP_PER_3	; en_6V on the board
@@ -332,7 +332,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/
   40 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
   41 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
   42 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 7
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 7
 
 
 DEFINED SYMBOLS
@@ -392,7 +392,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 8
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 8
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -452,7 +452,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 9
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 9
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -512,7 +512,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 10
+GAS LISTING ~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43 			page 10
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -532,13 +532,13 @@ DEFINED SYMBOLS
        pmem_defs.asm:268    *ABS*:00000162 GP_PER_2
        pmem_defs.asm:269    *ABS*:00000164 GP_PER_3
        pmem_defs.asm:270    *ABS*:00000166 GP_PER_4
-/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43:5      .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43:18     .text:00000028 end_of_test
+~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43:5      .text:00000000 main
+~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.s43:18     .text:00000028 end_of_test
 
 NO UNDEFINED SYMBOLS
 
-/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.o:     file format elf32-msp430
-/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.o
+~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.o:     file format elf32-msp430
+~/rasp30/prog_assembly/libs/scilab_code/characterization/all_step/GATE_DAC/gate_DAC_char.o
 architecture: msp430:430, flags 0x00000011:
 HAS_RELOC, HAS_SYMS
 start address 0x00000000

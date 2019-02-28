@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 1
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 1
 
 
    1               	.include "pmem_defs.asm"
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
   56               	.set    P1SEL,     0x0026
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 2
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 2
 
 
   57               	
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
  113               	.set    TAR,       0x0170
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 3
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 3
 
 
  114               	.set    TACCTL0,   0x0162
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 4
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 4
 
 
  171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 5
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 5
 
 
  228               	
@@ -298,7 +298,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
   12 0000 3140 5040 	        mov     #DMEM_250, r1           ; Initialize stack pointer
   13 0004 3740 0060 		mov	#0x6000, r7
   14 0008 B240 1000 	        mov	#0x0010, &BCSCTL2	; Divide clock 20MHz
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 6
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 6
 
 
   14      5800 
@@ -358,7 +358,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
   62 0080 0993      	        cmp	#0, r9  	        ; If DAC2 = 0 & DAC3 = 0, skip setting DAC2 & DAC3
   63 0082 0324      		jeq	skip_DAC3DAC2_set
   64 0084 2B53      	        incd	r11
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 7
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 7
 
 
   65 0086 A24B D201 	        mov     @r11, &DAC_03_02        ; get the DAC_03_02's value
@@ -418,7 +418,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  119               	;	mov     &ADC, @r7	        ; Get value in counter
  120               	;        incd	r7
  121               	;        dec.w   r15
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 8
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 8
 
 
  122               	;        jz      measure_end
@@ -477,7 +477,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  175 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
  176 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
  177 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 9
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 9
 
 
 DEFINED SYMBOLS
@@ -537,7 +537,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 10
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 10
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -597,7 +597,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 11
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 11
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -657,7 +657,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 12
+GAS LISTING ~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 12
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -677,26 +677,26 @@ DEFINED SYMBOLS
        pmem_defs.asm:268    *ABS*:00000162 GP_PER_2
        pmem_defs.asm:269    *ABS*:00000164 GP_PER_3
        pmem_defs.asm:270    *ABS*:00000166 GP_PER_4
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:3      *ABS*:000001d0 DAC_01_00
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:4      *ABS*:000001d2 DAC_03_02
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:5      *ABS*:000001d4 DAC_05_04
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:6      *ABS*:000001d6 DAC_07_06
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:7      *ABS*:000001d8 DAC_09_08
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:11     .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:137    .text:000000e4 wait_ms
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:50     .text:0000006a loop_start
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:58     .text:0000007a skip_DAC1DAC0_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:66     .text:0000008a skip_DAC3DAC2_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:74     .text:0000009a skip_DAC5DAC4_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:82     .text:000000aa skip_DAC7DAC6_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:90     .text:000000ba skip_DAC9DAC8_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:97     .text:000000c4 wait_skip
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:148    .text:000000f6 wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:104    .text:000000d2 initial_wait_skip
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:128    .text:000000d8 loop_end
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:132    .text:000000dc end_of_test
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:140    .text:000000ea wait_loop
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:151    .text:000000fc wait_10us_loop
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:3      *ABS*:000001d0 DAC_01_00
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:4      *ABS*:000001d2 DAC_03_02
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:5      *ABS*:000001d4 DAC_05_04
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:6      *ABS*:000001d6 DAC_07_06
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:7      *ABS*:000001d8 DAC_09_08
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:11     .text:00000000 main
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:137    .text:000000e4 wait_ms
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:50     .text:0000006a loop_start
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:58     .text:0000007a skip_DAC1DAC0_set
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:66     .text:0000008a skip_DAC3DAC2_set
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:74     .text:0000009a skip_DAC5DAC4_set
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:82     .text:000000aa skip_DAC7DAC6_set
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:90     .text:000000ba skip_DAC9DAC8_set
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:97     .text:000000c4 wait_skip
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:148    .text:000000f6 wait_10us
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:104    .text:000000d2 initial_wait_skip
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:128    .text:000000d8 loop_end
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:132    .text:000000dc end_of_test
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:140    .text:000000ea wait_loop
+~/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:151    .text:000000fc wait_10us_loop
 
 NO UNDEFINED SYMBOLS
 

@@ -2,8 +2,8 @@ clc; // clear the console window
 previousprot = funcprot(1); //integer with possible values 0, 1, 2 returns previous value
 funcprot(0); //allows the user to specify what scilab do when such variables are redefined. 0=nothing, 1=warning, 2=error
 loadXcosLibs(); // Import some useful Xcos macros into Scilab.
-getd('/home/ubuntu/rasp30/xcos_blocks/') ;//Loads all .sci files (containing Scilab functions) defined in the path directory.
-home_dir = '/home/ubuntu/rasp30/xcos_blocks/';
+getd('~/rasp30/xcos_blocks/') ;//Loads all .sci files (containing Scilab functions) defined in the path directory.
+home_dir = '~/rasp30/xcos_blocks/';
 
 //Create custom palette for all blocks
 pal1 = xcosPal("Level 1 (System) Blocks");
@@ -27,7 +27,7 @@ style.align="center";
 style.overflow="fill"; 
 style.fontSize=16;
 
-file_list=listfiles("/home/ubuntu/rasp30/sci2blif/rasp_design_added_blocks/*.sce");
+file_list=listfiles("~/rasp30/sci2blif/rasp_design_added_blocks/*.sce");
 size_file_list=size(file_list);
 if file_list ~= [] then
     for i=1:size_file_list(1)
@@ -53,17 +53,17 @@ funcprot(previousprot); //Turn the warning messages back on to be displayed in c
 
 // Launching the GUI
 mprintf("Launching the GUI\n");
-exec('/home/ubuntu/rasp30/sci2blif/guicode_v6.sce',-1);
+exec('~/rasp30/sci2blif/guicode_v6.sce',-1);
 mprintf("Finished executing guicode_v6.sce, now launching caps4dgn.sce\n");
-exec('/home/ubuntu/rasp30/sci2blif/caps4dgn.sce',-1);
-cd('/home/ubuntu/rasp30/RASP_Workspace');
-//exec('/home/ubuntu/rasp30/work/examples/variables/allvariables.sce',-1)
-//exec('/home/ubuntu/RASP_Workspace/block_files/create_palette.sce',-1);
-//getd('/home/ubuntu/rasp30/sci2blif/blif4blks/')
-//getd('/home/ubuntu/RASP_Workspace/block_files/compile_files')
+exec('~/rasp30/sci2blif/caps4dgn.sce',-1);
+cd('~/rasp30/RASP_Workspace');
+//exec('~/rasp30/work/examples/variables/allvariables.sce',-1)
+//exec('~/RASP_Workspace/block_files/create_palette.sce',-1);
+//getd('~/rasp30/sci2blif/blif4blks/')
+//getd('~/RASP_Workspace/block_files/compile_files')
 
 //Add modelica files' path to the variable %MODELICA_USER_LIBS
 mprintf("Adding modelica file paths to the variable\n");
 global %MODELICA_USER_LIBS;
-%MODELICA_USER_LIBS="/home/ubuntu/rasp30/xcos_blocks";
+%MODELICA_USER_LIBS="~/rasp30/xcos_blocks";
 mprintf("Completed rasp_design.sce file\n");

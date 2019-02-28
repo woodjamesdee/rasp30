@@ -1,4 +1,4 @@
-<block name="/home/ubuntu/RASP_Workspace/demo_files/C4+Amp//C4_MD.net" instance="FPGA_packed_netlist[0]">
+<block name="~/RASP_Workspace/demo_files/C4+Amp//C4_MD.net" instance="FPGA_packed_netlist[0]">
 	<inputs>
 		net1_1 net3_1 net4_1 
 	</inputs>

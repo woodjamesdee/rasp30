@@ -7,7 +7,7 @@ endfunction
 function block_doc_name_callback()
     global block_doc_name block_doc_list; block_name_obj = findobj('tag','block_doc_name'); block_doc_name = block_name_obj.string;
     
-    file_list=listfiles("/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/*.tex");
+    file_list=listfiles("~/rasp30/sci2blif/documentation/blocks_latex/text/*.tex");
     block_doc_list=[""];
     size_flist=size(file_list,1);
     for ii=1:size_flist
@@ -46,7 +46,7 @@ endfunction
 function Gen_block_doc_callback()
     global block_doc_name block_doc_list block_doc_ni block_doc_no block_doc_pl block_doc_bdt block_doc_bdf;
     
-    fd_w= mopen("/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex",'wt');
+    fd_w= mopen("~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex",'wt');
     mputl("\pagebreak",fd_w);
     mputl("",fd_w);
     temp_bdn=strsplit(block_doc_name,["_";],100); size_temp_bdn=size(temp_bdn); temp_name1=temp_bdn(1);
@@ -68,21 +68,21 @@ function Gen_block_doc_callback()
     mputl("Block description: ",fd_w);
     mclose(fd_w);
     
-    unix_w("cat /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex "+block_doc_bdt+" > /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex1");
-    unix_w("mv /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex1 /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex");
+    unix_w("cat ~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex "+block_doc_bdt+" > ~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex1");
+    unix_w("mv ~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex1 ~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex");
     temp_string=strsplit(block_doc_bdf,["/";"."],100);
     size_temp_string=size(temp_string,1);
-    unix_w("cp "+block_doc_bdf+" /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/figures/"+block_doc_name+"."+temp_string(size_temp_string));
+    unix_w("cp "+block_doc_bdf+" ~/rasp30/sci2blif/documentation/blocks_latex/figures/"+block_doc_name+"."+temp_string(size_temp_string));
     
-    fd_w= mopen("/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex",'a');
+    fd_w= mopen("~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_name+".tex",'a');
     mputl("",fd_w);
     mputl("\begin{figure}[H]  % jpg, png, or pdf",fd_w);
-    mputl("\includegraphics[width=300pt]{/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/figures/"+block_doc_name+"."+temp_string(size_temp_string)+"}",fd_w);
+    mputl("\includegraphics[width=300pt]{~/rasp30/sci2blif/documentation/blocks_latex/figures/"+block_doc_name+"."+temp_string(size_temp_string)+"}",fd_w);
     mputl("\end{figure}",fd_w);
     mputl("",fd_w);
     mclose(fd_w);
     
-    file_list=listfiles("/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/*.tex");
+    file_list=listfiles("~/rasp30/sci2blif/documentation/blocks_latex/text/*.tex");
     block_doc_list=[""];
     size_flist=size(file_list,1);
     for ii=1:size_flist
@@ -91,19 +91,19 @@ function Gen_block_doc_callback()
     end
     block_doc_list=gsort(block_doc_list,"g",'i');
     
-    fd_w= mopen("/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/block_list.tex",'wt');
+    fd_w= mopen("~/rasp30/sci2blif/documentation/blocks_latex/block_list.tex",'wt');
     for ii=1:size_flist
-        mputl("\input{/home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_list(ii)+".tex}",fd_w);
+        mputl("\input{~/rasp30/sci2blif/documentation/blocks_latex/text/"+block_doc_list(ii)+".tex}",fd_w);
     end
     mclose(fd_w);
     
-    [a,b]=unix_g("cd /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/ && pdflatex /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/block_doc.tex");
+    [a,b]=unix_g("cd ~/rasp30/sci2blif/documentation/blocks_latex/ && pdflatex ~/rasp30/sci2blif/documentation/blocks_latex/block_doc.tex");
     if b == 1 then
         messagebox("Texlive for latex compilation is not installed. It will install Texlive and take some time. Do not turn off it", "Texlive not installed yet!", "scilab");
         unix_g("sudo apt-get install texlive");
     end
     
-    [a,b]=unix_g("acroread /home/ubuntu/rasp30/sci2blif/documentation/blocks_latex/block_doc.pdf &"); 
+    [a,b]=unix_g("acroread ~/rasp30/sci2blif/documentation/blocks_latex/block_doc.pdf &"); 
     if b == 1 then messagebox("Install Adobe Reader via the Documents menu. ", "Adode Reader not installed yet!", "scilab"); end
     
 endfunction

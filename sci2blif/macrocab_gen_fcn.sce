@@ -31,21 +31,21 @@ function Start_MC_design_callback()
     global macrocab_name folder_name;
     
     // Macro cab block name overlap check
-    fd_r = mopen("/home/ubuntu/rasp30/vpr2swcs/block_list",'r');block_list=mgetl(fd_r);mclose(fd_r);  // Default value: frame. 
+    fd_r = mopen("~/rasp30/vpr2swcs/block_list",'r');block_list=mgetl(fd_r);mclose(fd_r);  // Default value: frame. 
     l_block_list=size(block_list,1);
     for ii=1:l_block_list
         if block_list(ii) == macrocab_name then messagebox('Please change the name of macro-cab block.', "Macroblock name error", "error"); abort; end
     end
-    file_list=listfiles("/home/ubuntu/rasp30/xcos_blocks/*.sci");
+    file_list=listfiles("~/rasp30/xcos_blocks/*.sci");
     l_file_list=size(file_list,1);
     for ii=1:l_file_list
-        if file_list(ii) == "/home/ubuntu/rasp30/xcos_blocks/"+macrocab_name+".sci" then messagebox('Please change the name of macro-cab block.', "Macroblock name error", "error"); abort; end
+        if file_list(ii) == "~/rasp30/xcos_blocks/"+macrocab_name+".sci" then messagebox('Please change the name of macro-cab block.', "Macroblock name error", "error"); abort; end
     end
     
-    temp_string="/home/ubuntu/RASP_Workspace/"+folder_name;
+    temp_string="~/RASP_Workspace/"+folder_name;
     mkdir(temp_string);
     cd(temp_string);
-    unix_g("cp /home/ubuntu/rasp30/sci2blif/xcos_ref/macrocab_generation/macrocab_xcosref_30_30a.xcos "+macrocab_name+".xcos");
+    unix_g("cp ~/rasp30/sci2blif/xcos_ref/macrocab_generation/macrocab_xcosref_30_30a.xcos "+macrocab_name+".xcos");
     xcos(macrocab_name+".xcos");
     messagebox('Make changes based on the provided xcos and Save it',"Design Macro-CAB block", "info", ["OK"], "modal");
 endfunction
@@ -330,7 +330,7 @@ function Generate_MC_callback()
     mclose(fd_w);
     
     
-    dir_frame ="/home/ubuntu/rasp30/vpr2swcs/macroblk_generation/frame/";
+    dir_frame ="~/rasp30/vpr2swcs/macroblk_generation/frame/";
     
     // .xml (arch)
     rasp_xml_list={"rasp3";"rasp3a";};
@@ -535,7 +535,7 @@ function Generate_MC_callback()
     //////////////////////////////////
     // Write Block information file 
     //////////////////////////////////
-    fd_w= mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+macrocab_name+".sci",'wt');
+    fd_w= mopen("~/rasp30/sci2blif/block_info/bi_"+macrocab_name+".sci",'wt');
     str_temp01=mblif_xcos(1,1)+","+mblif_xcos(1,2)+","+mblif_xcos(1,3)+","+mblif_xcos(1,4);
     str_temp02=mblif_xcos(2,1)+","+mblif_xcos(2,2)+","+mblif_xcos(2,3);
     str_temp03=mblif_xcos(3,1);
@@ -591,7 +591,7 @@ function Generate_MC_callback()
     //////////////////////////////////
     mblif_xcos_r=[""];
     ele_index_r=[""];
-    fd_r = mopen("/home/ubuntu/rasp30/sci2blif/block_info/bi_"+macrocab_name+".sci",'r');
+    fd_r = mopen("~/rasp30/sci2blif/block_info/bi_"+macrocab_name+".sci",'r');
     for i=1:7
         str_temp=mgetl(fd_r, 1); str_temp=strsplit(str_temp,[","],100);str_size=size(str_temp);
         for j=1:str_size(1)
@@ -644,7 +644,7 @@ function Generate_MC_callback()
         model_out=model_out+"-1";
         if i~=output_num then model_out=model_out+";"; end
     end
-    fd_w= mopen ("/home/ubuntu/rasp30/xcos_blocks/"+macrocab_name+".sci",'wt');
+    fd_w= mopen ("~/rasp30/xcos_blocks/"+macrocab_name+".sci",'wt');
     //fd_w= mopen (macrocab_name+"_xcos.sci",'wt');
     mputl("function [x,y,typ]="+mblif_name+"(job,arg1,arg2)",fd_w);
     mputl("    x=[];y=[];typ=[];",fd_w);
@@ -693,7 +693,7 @@ function Generate_MC_callback()
     //////////////////////////////////////////////
     // Generate rasp_design function 
     //////////////////////////////////////////////
-    fd_w= mopen ("/home/ubuntu/rasp30/sci2blif/rasp_design_added_blocks/"+macrocab_name+".sce",'wt');
+    fd_w= mopen ("~/rasp30/sci2blif/rasp_design_added_blocks/"+macrocab_name+".sce",'wt');
     //fd_w= mopen (macrocab_name+"_rasp_design.sce",'wt');
     mputl("style.fontSize=12;",fd_w);
     mputl("style.displayedLabel="""+mblif_name+""";",fd_w);
@@ -705,7 +705,7 @@ function Generate_MC_callback()
     // Generate sci2blif function
     //////////////////////////////////////////////
     blif_bl_num=strtod(mblif_xcos_r(7,1)); // # of BLIF blocks
-    fd_w= mopen ("/home/ubuntu/rasp30/sci2blif/sci2blif_added_blocks/"+macrocab_name+".sce",'wt');
+    fd_w= mopen ("~/rasp30/sci2blif/sci2blif_added_blocks/"+macrocab_name+".sce",'wt');
     //fd_w= mopen (macrocab_name+"_sci2blif.sce",'wt');
     mputl("//**************************** "+mblif_name+" **********************************",fd_w);
     mputl("if (blk_name.entries(bl) == """+mblif_name+""") then",fd_w);
@@ -804,8 +804,8 @@ function Generate_MC_callback()
     mclose(fd_w);
     
     
-    dir_py="/home/ubuntu/rasp30/vpr2swcs/";
-    dir_arch="/home/ubuntu/rasp30/vpr2swcs/arch/";
+    dir_py="~/rasp30/vpr2swcs/";
+    dir_arch="~/rasp30/vpr2swcs/arch/";
     
     ////////////////////////////
     // Update files to folders
@@ -846,12 +846,12 @@ function Generate_MC_callback()
     /////////////////////////////////////////////////////
     // Macro cab block name update for overlap checking
     ////////////////////////////////////////////////////
-    fd_r = mopen("/home/ubuntu/rasp30/vpr2swcs/block_list",'r');block_list=mgetl(fd_r);mclose(fd_r);  // Default value: frame. 
+    fd_r = mopen("~/rasp30/vpr2swcs/block_list",'r');block_list=mgetl(fd_r);mclose(fd_r);  // Default value: frame. 
     l_block_list=size(block_list,1);
     block_list(l_block_list+1)=macrocab_name;
-    fd_w = mopen("/home/ubuntu/rasp30/vpr2swcs/block_list",'wt');mputl(block_list,fd_w);mclose(fd_w);
+    fd_w = mopen("~/rasp30/vpr2swcs/block_list",'wt');mputl(block_list,fd_w);mclose(fd_w);
     
-    unix_w("cp "+macrocab_name+".xcos /home/ubuntu/rasp30/sci2blif/xcos_ref/macrocab_generation/");
+    unix_w("cp "+macrocab_name+".xcos ~/rasp30/sci2blif/xcos_ref/macrocab_generation/");
     
     disp("Macro-CAB block has been generated.");
     filebrowser();

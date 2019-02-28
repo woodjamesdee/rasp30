@@ -33,7 +33,7 @@ echo $a
 #$inputs=$0
 #var1=2
 cp temp/$pre_vpr temp/$blif_fl
-DPATH="/home/ubuntu/Downloads/vtr_release/vtr_flow/temp/$blif_fl"
+DPATH="~/Downloads/vtr_release/vtr_flow/temp/$blif_fl"
 for f in $DPATH
 do
   if [ -f $f -a -r $f ]; then

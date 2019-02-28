@@ -23,7 +23,7 @@ mputl('net1_1 9 0 1 #int[1]',MITE_pads)
 mclose(MITE_pads)
 m_place=string(m_place);
 MITE_place = mopen(path+'/mite_FG.place','w')
-mputl('Netlist file: /home/ubuntu/RASP_Workspace/RASP_Workspace/Step_1/mite_FG/mite_FG.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml',MITE_place)
+mputl('Netlist file: ~/RASP_Workspace/RASP_Workspace/Step_1/mite_FG/mite_FG.net   Architecture file: ~/rasp30/vpr2swcs/./arch/rasp3_arch.xml',MITE_place)
 mputl('Array size: 14 x 14 logic blocks',MITE_place)
 mputl(' ',MITE_place)
 mputl('#block name	x	y	subblk	block number',MITE_place)
