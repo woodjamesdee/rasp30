@@ -5,7 +5,7 @@
 #cp -u ~/rasp30/sci2blif/create_palette.sce ~/RASP_Workspace/block_files/
 #cp -u ~/rasp30/sci2blif/cadsp.sci ~/RASP_Workspace/block_files/compile_files/
 
-cd; sudo chown ubuntu:ubuntu rasp30/RASP_Workspace/ -R
+cd; sudo chown $USER:$USER rasp30/RASP_Workspace/ -R
 
 sudo cp -u ~/rasp30/scilab_config/99-usb-serial.rules /etc/udev/rules.d/
 
