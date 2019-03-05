@@ -21,7 +21,7 @@ name = sys.argv[2]
 zipfile.ZipFile(name + ".zip", 'w', zipfile.ZIP_DEFLATED).write(path + name + ".xcos", basename(path + name + ".xcos"))
 #shutil.move(path + name + '.zip', expanduser("~") + "/rasp30/sci2blif/" + name + '.zip')
 
-username = raw_input("GTID: ")
+username = input("GTID: ")
 password = getpass.getpass()
 
 ssh = createSSHClient('rg-fpaa-host.crnch.gatech.edu', 22, username, password)

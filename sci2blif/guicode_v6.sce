@@ -139,7 +139,7 @@ function export_to_fpaa_callback(handles)
     if(extension == '.xcos') then
         disp(path)
         disp(fname)
-        unix_s('python ~/rasp30/sci2blif/export.py ' + path + ' ' + fname);
+        unix_s('python3 ~/rasp30/sci2blif/export.py ' + path + ' ' + fname);
         disp("Zipped as " + fname + ".zip!");
     else messagebox(["You have not selected a Design (.xcos)" "Please choose one to export."], "No File Selected", "warning");
     end
