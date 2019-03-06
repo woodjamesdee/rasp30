@@ -55,7 +55,7 @@ exec('~/rasp30/sci2blif/bcd_fcn.sce',-1);
 exec("~/rasp30/sci2blif/demo_examples/example_inputs.sce");
 
 //Add custom menus
-file_menu = uimenu("Parent", gui, "Label", gettext("Examples"),'ForegroundColor',[1,1,1]);
+file_menu = uimenu("Parent", gui, "Label", gettext("Examples"),'ForegroundColor',[0,0,0]);
 file19_menu = uimenu("Parent", file_menu, "Label", gettext("On chip"));
 file23_menu = uimenu("Parent", file_menu, "Label", gettext("IO Pins"));
 file1_menu = uimenu("Parent", file_menu, "Label", gettext("L1 Simulation"));
@@ -69,23 +69,26 @@ file35_menu = uimenu("Parent", file19_menu, "Label", gettext("C4 with Min-Max de
 file36_menu = uimenu("Parent", file19_menu, "Label", gettext("WTA"), "callback", "demo_example_callback(""wta_onchip"",""on"",""on"")");
 file39_menu = uimenu("Parent", file19_menu, "Label", gettext("HHneuron"), "callback", "demo_example_callback(""hhn_onchip"",""on"",""on"")");
 file40_menu = uimenu("Parent", file19_menu, "Label", gettext("Follower"), "callback", "demo_example_callback(""Follower"",""on"",""on"")");
+
 file24_menu = uimenu("Parent", file23_menu, "Label", gettext("LPF"), "callback", "demo_example_callback(""lpf_offchip"",""on"",""off"")");
 file25_menu = uimenu("Parent", file23_menu, "Label", gettext("Digital"), "callback", "demo_example_callback(""digital_offchip"",""on"",""off"")");
 file26_menu = uimenu("Parent", file23_menu, "Label", gettext("C4"), "callback", "demo_example_callback(""c4_offchip"",""on"",""off"")"); 
+
 file4_menu = uimenu("Parent", file1_menu, "Label", gettext("LPF"), "callback", "demo_example_callback(""lpf_l1_sim"",""off"",""on"")");
 file5_menu = uimenu("Parent", file1_menu, "Label", gettext("C4"), "callback", "demo_example_callback(""c4_l1_sim"",""off"",""on"")");
 file11_menu = uimenu("Parent", file1_menu, "Label", gettext("VMM+WTA"), "callback","demo_example_callback(""vmm_wta_l1_sim"",""off"",""on"")");
+
 file32_menu = uimenu("Parent", file31_menu, "Label", gettext("nFET"), "callback", "demo_example_callback(""nmos_l2_sim"",""off"",""off"")");
 file33_menu = uimenu("Parent", file31_menu, "Label", gettext("pFET"), "callback", "demo_example_callback(""pmos_l2_sim"",""off"",""off"")");
 file34_menu = uimenu("Parent", file31_menu, "Label", gettext("OTA"), "callback", "demo_example_callback(""ota_l2_sim"",""off"",""off"")");
 file37_menu = uimenu("Parent", file31_menu, "Label", gettext("C4"), "callback", "demo_example_callback(""c4_l2_sim"",""off"",""off"")");
 file38_menu = uimenu("Parent", file31_menu, "Label", gettext("Bias generator"), "callback", "demo_example_callback(""biasgen_l2_sim"",""off"",""off"")");
 
-update_menu = uimenu("Parent", gui, "Label", gettext("Update"),'ForegroundColor',[1,1,1]);
+update_menu = uimenu("Parent", gui, "Label", gettext("Update"),'ForegroundColor',[0,0,0]);
 update1_menu = uimenu("Parent", update_menu, "Label", gettext("Update RASP Tools"), "callback", "up1_callback()");
 update2_menu = uimenu("Parent", update_menu, "Label", gettext("Reset RASP Tools"), "callback", "up2_callback()");
 
-doc_menu = uimenu("Parent", gui, "Label", gettext("Docs"), 'ForegroundColor',[1,1,1]);
+doc_menu = uimenu("Parent", gui, "Label", gettext("Docs"), 'ForegroundColor',[0,0,0]);
 doc_block_menu = uimenu("Parent", doc_menu, "Label", gettext("Open block documentation"), "callback", "doc_block_callback()");
 doc_full_menu = uimenu("Parent", doc_menu, "Label", gettext("Open full documentation"), "callback", "doc_full_callback()");
 doc1_menu = uimenu("Parent", doc_menu, "Label", gettext("RASP 3.0 Board"), "callback", "open_document(""30board.pdf"")");
@@ -96,7 +99,7 @@ doc5_menu = uimenu("Parent", doc_menu, "Label", gettext("Useful Websites for Blo
 doc7_menu = uimenu("Parent", doc_menu, "Label", gettext("Block Library Information"), "callback", "open_document(""./blocks_latex/block_doc.pdf"")");
 doc6_menu = uimenu("Parent", doc_menu, "Label", gettext("Install Adobe Reader"), "callback", "doc6_callback()");
 
-etc_menu = uimenu("Parent", gui, "Label", gettext("Utilities"), 'ForegroundColor',[1,1,1]);
+etc_menu = uimenu("Parent", gui, "Label", gettext("Utilities"), 'ForegroundColor',[0,0,0]);
 etc7_menu = uimenu("Parent", etc_menu, "Label", gettext("Initialize Ammeter"), "callback", "etc7_callback()");
 etc8_menu = uimenu("Parent", etc_menu, "Label", gettext("Create/Load CSV File"));
 etc10_menu = uimenu("Parent", etc8_menu, "Label", gettext("Create .csv File"), "callback", "etc10_callback()");
@@ -113,7 +116,7 @@ etc13_menu = uimenu("Parent", etc11_menu, "Label", gettext("Design Metrics Off")
 etc14_menu = uimenu("Parent", etc_menu, "Label", gettext("Compilation Check 3.0/3.0a"), "callback", "etc14_callback()");
 etc15_menu = uimenu("Parent", etc_menu, "Label", gettext("Convert to Modelica blocks"), "callback", "etc15_callback()");
 
-gui_menu = uimenu("Parent", gui, "Label", gettext("GUIs"), 'ForegroundColor',[1,1,1]);
+gui_menu = uimenu("Parent", gui, "Label", gettext("GUIs"), 'ForegroundColor',[0,0,0]);
 gui1_menu = uimenu("Parent", gui_menu, "Label", gettext("Calibration"), 'ForegroundColor',[0,0,0], "callback", "gui1_callback()");
 gui7_menu = uimenu("Parent", gui_menu, "Label", gettext("Generate Macro blocks"));
 gui4_menu = uimenu("Parent", gui7_menu, "Label", gettext("Generate Macro-BLIF"), 'ForegroundColor',[0,0,0], "callback", "gui4_callback()");
