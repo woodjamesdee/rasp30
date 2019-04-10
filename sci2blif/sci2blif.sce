@@ -50,43 +50,53 @@ internal_number = 1; add_tgates4logic = 0; number_tgates = 0;
 dac_loc_idx=0; dac_buf_loc_idx=0; gpin_loc_idx=0; adc_loc_idx=0; adc_ip_idx1=1; adc_ip_idx2=1; adc_ip_net=[1 2];
 
 dac_loc= cell(); dac_buf_loc= cell(); gpin_loc= cell(); adc_locin= cell(); adc_loc= cell(); iopad_loc= cell();
+
 exec("~/rasp30/sci2blif/io_info/io_info_rasp30.sce",-1);
 exec("~/rasp30/sci2blif/io_info/io_info_rasp30a.sce",-1);
 
 // Get net & block information (connection, block parameters)
 for i =1:no
-    if(length(scs_m.objs(i) )==8)  then numoflink=numoflink+1; link_name(1,numoflink)=i;
+    if (i > 0) then
+        disp(scs_m.objs(i));
+    end
+    if (sum(size(fieldnames(scs_m.objs(i)))) == 8)  then // Not sure if translated to 6.0.2 correctly? Previously "(length(scs_m.objs(i) )==8)" -Ben
+        numoflink=numoflink+1; 
+        link_name(1,numoflink)=i;
     else
+        disp(scs_m.objs(i).gui);
         blk(j,1)=i;
-        if(scs_m.objs(i).gui== "dac") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name.entries(j)= scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "dc_out1") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "dac_o") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-//        elseif (scs_m.objs(i).gui== "adc1") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-//        elseif (scs_m.objs(i).gui== "adc2") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "adc_ip") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "pad_in") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "pad_ina") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "pad_ind") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "pad_out") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "pad_outa") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        elseif (scs_m.objs(i).gui== "pad_outd") then prime_ops(op_count)=j; op_count=op_count+1; blk_name.entries(j)=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
-        else    
-            blk_name.entries(j)=scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        if(scs_m.objs(i).gui== "dac") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name{j}= scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "dc_out1") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "dac_o") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+//        elseif (scs_m.objs(i).gui== "adc1") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+//        elseif (scs_m.objs(i).gui== "adc2") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "adc_ip") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "pad_in") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "pad_ina") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "pad_ind") then prime_ips(ip_count)=j; ip_count=ip_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "pad_out") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "pad_outa") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        elseif (scs_m.objs(i).gui== "pad_outd") then prime_ops(op_count)=j; op_count=op_count+1; blk_name{j}=  scs_m.objs(i).gui; blk_objs(objnum)=j; objnum=objnum+1;
+        else   
+            blk_name{j}=scs_m.objs(i).gui; 
+            blk_objs(objnum)=j; 
+            objnum=objnum+1;
             //counting extra primary inputs for references of output otas of vmm
+            disp(scs_m.objs(i).gui =='vmm_4');
             if (scs_m.objs(i).gui =='vmm_4') then vmm_ct= vmm_ct+8;
             elseif (scs_m.objs(i).gui =='meas_volt') then mite_adc = 1;
             elseif (scs_m.objs(i).gui =='TIA') then mite_adc = 1;
             elseif (scs_m.objs(i).gui =='GENARB_f')  then ga_blk_num = ga_blk_num+1; ga_idx(ga_blk_num,1).entries(1,1)=i; ga_idx(ga_blk_num,1).entries(1,2)=size(evstr(scs_m.objs(i).model.opar(1)), "r");
-            elseif (scs_m.objs(i).gui =='gpio_in' | scs_m.objs(i).gui =='gpio_in_fixloc')  then gpin_blk_num = gpin_blk_num+1; gpin_idx(gpin_blk_num,1).entries(1,1)=i; gpin_idx(gpin_blk_num,1).entries(1,2)=size(evstr(scs_m.objs(i).model.opar(1)), "r");
+            elseif (scs_m.objs(i).gui =='gpio_in' | scs_m.objs(i).gui =='gpio_in_fixloc')  then  gpin_blk_num = gpin_blk_num+1; gpin_idx(gpin_blk_num,1).entries(1,1)=i; gpin_idx(gpin_blk_num,1).entries(1,2)=size(evstr(scs_m.objs(i).model.opar(1)), "r");
             elseif (scs_m.objs(i).gui== "vdd_i") then fix_vdd = 1;
             elseif (scs_m.objs(i).gui== "gnd_i") then fix_gnd = 1;
             elseif (scs_m.objs(i).gui== "lkuptb") then
-            if scs_m.objs(i).model.ipar(1) ~= 4 then fix_gnd = 1; fix_vdd = 1; add_tgates4logic = 1; number_tgates = max(4-scs_m.objs(i).model.ipar(1),number_tgates); end
+                if scs_m.objs(i).model.ipar(1) ~= 4 then fix_gnd = 1; fix_vdd = 1; add_tgates4logic = 1; number_tgates = max(4-scs_m.objs(i).model.ipar(1),number_tgates); end
             elseif (scs_m.objs(i).gui== "gnd_dig") then fix_gnd = 1; fix_vdd = 1;
             elseif (scs_m.objs(i).gui== "vdd_dig") then fix_vdd = 1;
             elseif (scs_m.objs(i).gui== "dc_in") then fix_vdd = 1;
             elseif (scs_m.objs(i).gui== "generic_dig") then dig_blk = 1;
-            elseif (scs_m.objs(i).gui== "nfet_gldn") | (scs_m.objs(i).gui== "pfet_gldn") | (scs_m.objs(i).gui== "speech")|(scs_m.objs(i).gui== "sr_16i_1o") then plcvpr = %t;
+            elseif (scs_m.objs(i).gui== "nfet_gldn") | (scs_m.objs(i).gui== "pfet_gldn") | (scs_m.objs(i).gui== "speech")|(scs_m.objs(i).gui== "sr_16i_1o") then  plcvpr = %t;
             elseif (scs_m.objs(i).gui== "vmm_wta") then fix_gnd = 1;
             elseif (scs_m.objs(i).gui== "Ramp_ADC") | (scs_m.objs(i).gui== "TIA_ramp") then ramp_adc = 1;  
             elseif (scs_m.objs(i).gui== "vmmwta") then plcvpr = %t;
@@ -107,20 +117,26 @@ for i =1:no
     end;
 end;
 // Get pad information from pad blocks
+disp('here');
 file_list=listfiles("~/rasp30/sci2blif/sci2pads_added_blocks/*.sce");
+
 size_file_list=size(file_list);
 if file_list ~= [] then
+    disp('here2');
     for bl=1:length(blk_objs)
         for i=1:size_file_list(1)
-            exec(file_list(i),-1);
+            disp('here3');
+            exec(file_list(i),-1); // breaking here -Ben
+            disp('here4');
         end
     end
+    
 end
 numofio=numofip+numofop;//blknumber+ip+op
-
+disp('here');
 blk=[blk,zeros(numofblk,numofio)];
 link_blk=link_name(1, 1:numoflink);
-
+disp('here');
 for m=1:numoflink
     curblk=scs_m.objs(link_blk(1,m)).from(1,1);
     for r=1:numofblk
@@ -144,7 +160,9 @@ for m=1:numoflink
                     end
                 end
             elseif(scs_m.objs(curblk).gui=='join') then
+                
                 blk(r,idx)=net;
+                mprintf('here');
                 if pass_num == 1 then
                     c_splt = scs_m.objs(link_blk(1,m)).to(1,1);
                     if scs_m.objs(c_splt).model.sim(2) == 4 then
