@@ -46,13 +46,13 @@ for i =1:no
         if(scs_m.objs(i).gui== "IN_f") then
           prime_ips(ip_count)=j;
           ip_count=ip_count+1;//primary ip count
-          blk_name.entries(j)=  strcat([scs_m.objs(i).gui ,scs_m.objs(i).graphics.exprs(1,1)])
+          blk_name{j}=  strcat([scs_m.objs(i).gui ,scs_m.objs(i).graphics.exprs(1,1)])
         elseif   (scs_m.objs(i).gui== "OUT_f") then
           prime_ops(op_count)=j;
           op_count=op_count+1;
-          blk_name.entries(j)=  strcat([scs_m.objs(i).gui ,scs_m.objs(i).graphics.exprs(1,1)]) 
+          blk_name{j}=  strcat([scs_m.objs(i).gui ,scs_m.objs(i).graphics.exprs(1,1)]) 
         else    
-        blk_name.entries(j)=scs_m.objs(i).gui;
+        blk_name{j}=scs_m.objs(i).gui;
         //if (scs_m.objs(i).gui ~= "IN_f" | scs_m.objs(i).gui ~= "OUT_f")then
         blk_objs(objnum)=j; //BLOCK NUMBER actually stored
         objnum=objnum+1;
@@ -135,15 +135,15 @@ disp("numips",numofip);
    //other stuff
   fd_w= mopen ("./expt2.blif",'a')
   for bl=1:length(blk_objs)
-    if(blk_name.entries(bl)=='ota_2')  then
+    if(blk_name{bl}=='ota_2')  then
          mputl("# ota",fd_w)
         ota_str= '.subckt ota ip1= net' + string(blk(blk_objs(bl),2)) + ' ip2= net'+ string(blk(blk_objs(bl),3)) + ' op1=net'+ string(blk(blk_objs(bl),2+numofip))
         mputl(ota_str,fd_w);
         //mputl(".blackbox",fd_w);
      //end;//ifota
      
- //elseif(blk_name.entries(bl) ~='IN_f' | blk_name.entries(bl) ~='OUT_f') then
-elseif (blk_name.entries(bl) =='div2') then
+ //elseif(blk_name{bl} ~='IN_f' | blk_name{bl} ~='OUT_f') then
+elseif (blk_name{bl} =='div2') then
     chdir ~/Downloads/vtr_release/vtr_flow
     unix_g(' perl ~/Downloads/vtr_release/vtr_flow/scripts/run_vtr_flow.pl ~/Downloads/vtr_release/vtr_flow/benchmarks/verilog/divBy2.v ~/Downloads/vtr_release/vtr_flow/arch/timing/k6_N10_memDepth16384_memData64_40nm_timing.xml -ending_stage scripts')
     unix_g('cp ~/Downloads/vtr_release/vtr_flow/temp/div*  ~/Downloads/vtr_release/vtr_flow/') 

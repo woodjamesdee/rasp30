@@ -1,5 +1,5 @@
 //************************** Generic Digital ***************************
-if (blk_name.entries(bl) =='generic_dig') then
+if (blk_name{bl} =='generic_dig') then
     cd(vpr_path);
     //*********** Writing supporting list file ***************
     blname = fileparts(scs_m.objs(bl).model.opar(1),'fname');

@@ -1,5 +1,5 @@
 //************************* VDD In Digital *****************************
-if (blk_name.entries(bl) =='vdd_dig') then
+if blk_name{bl} =='vdd_dig') then
     if chgnet(6) == 0 then
         mputl("#VDD_DIG "+string(bl),fd_w);
         vdd_dig_str= ".subckt tgate in[0]=vcc in[1]=vcc out=vcc_dig";

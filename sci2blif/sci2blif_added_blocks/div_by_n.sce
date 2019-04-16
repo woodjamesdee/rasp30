@@ -1,5 +1,5 @@
 //*************************** DIV_BY_N *********************************
-if (blk_name.entries(bl) =='div_by_n') then
+if (blk_name{bl} =='div_by_n') then
     cd(vpr_path);
     //**********************************
     //Writing supporting list file

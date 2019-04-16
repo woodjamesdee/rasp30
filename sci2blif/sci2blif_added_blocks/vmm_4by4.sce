@@ -1,4 +1,4 @@
-if (blk_name.entries(bl) =='vmm_4by4') then 
+if (blk_name{bl} =='vmm_4by4') then 
     temp_weight=evstr(scs_m.objs(bl).model.opar(1));
     size_weight=size(temp_weight); 
     if size_weight(1) ~= 4 | size_weight(2) ~= 4 then 

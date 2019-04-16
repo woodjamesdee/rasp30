@@ -1,5 +1,5 @@
 //**************************** Compiled RAMP ADC ****************************
-if (blk_name.entries(bl) =='Ramp_ADC') then
+if (blk_name{bl} =='Ramp_ADC') then
     cap_info = cap_info2(cap_info,pass_num,'out_ramp_adc', bl)
     mputl("# Ramp_ADC*",fd_w);
    

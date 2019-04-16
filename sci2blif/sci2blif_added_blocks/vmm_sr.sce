@@ -1,5 +1,5 @@
 //*********************** VMM Shift Register ***************************
-if (blk_name.entries(bl) =='vmm_sr') then 
+if (blk_name{bl} =='vmm_sr') then 
     addvmm = %t;
     k =scs_m.objs(blk_objs(bl)).model.opar(1);
     tar1=[];

@@ -1,5 +1,5 @@
 //**************************** LPF OTA *********************************
-if(blk_name.entries(bl)=='lpfota')  then
+if(blk_name{bl}=='lpfota')  then
 global lpf_ota_count
 if lpf_ota_count==0
 lpf_ota_count=1

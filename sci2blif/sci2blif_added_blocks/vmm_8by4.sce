@@ -1,5 +1,5 @@
 //************************* VMM_8by4 ************************************
-if (blk_name.entries(bl) =='vmm_8by4') then 
+if (blk_name{bl} =='vmm_8by4') then 
     addvmm = %t;
     k =scs_m.objs(blk_objs(bl)).model.opar(1);
     tar1=[];

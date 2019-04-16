@@ -1,5 +1,5 @@
 //**************************** FG OTA *********************************
-if(blk_name.entries(bl)=='fgota')  then
+if(blk_name{bl}=='fgota')  then
     //global board_num chip_num;
     exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce',-1); 
     select board_num 

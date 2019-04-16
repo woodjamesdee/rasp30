@@ -1,5 +1,5 @@
 //**************************** Measure Volt (mite_adc) ****************************
-if (blk_name.entries(bl) =='meas_volt') then
+if (blk_name{bl} =='meas_volt') then
 
 global MITE_ADC_check;
 if MITE_ADC_check==0

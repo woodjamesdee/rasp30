@@ -1,5 +1,5 @@
 //****************************** Mismatch measure block **********************************
-if (blk_name.entries(bl) =='mismatch_meas') then
+if (blk_name{bl} =='mismatch_meas') then
     addvmm = %t;
     mputl("#MISMATCH_MEAS "+string(bl),fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)

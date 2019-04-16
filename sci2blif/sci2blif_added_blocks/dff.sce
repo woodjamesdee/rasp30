@@ -1,5 +1,5 @@
 //**************************** D flip Flop ********************************
-if(blk_name.entries(bl)=='dff')  then
+if(blk_name{bl}=='dff')  then
     mputl("# D Flip Flop ",fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)
         // dff_str='.names'+' net' + string(blk(blk_objs(bl),2))+"_"+string(ss)+' tg4logic_1 tg4logic_2 tg4logic_3'+' internal_'+ string(internal_number)+"_"+string(ss);

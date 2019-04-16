@@ -1,5 +1,5 @@
 //****************************** MITE***********************************
-if (blk_name.entries(bl) =='mite_FG') then
+if (blk_name{bl} =='mite_FG') then
      plcvpr=%t
  global mite_count
      mite_count=mite_count+1;

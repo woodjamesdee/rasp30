@@ -1,5 +1,5 @@
 //******************* VMM 16x16 with Shift Register ********************
-if (blk_name.entries(bl) =='vmm16x16_sr') then
+if (blk_name{bl} =='vmm16x16_sr') then
     addvmm = %t;
     mputl("# VMM 16x16 with shift register",fd_w);
     temp_weight=evstr(scs_m.objs(bl).model.opar(1));
@@ -113,7 +113,7 @@ end
 
 
 
-//if (blk_name.entries(bl) =='vmm16x16_sr') then
+//if (blk_name{bl} =='vmm16x16_sr') then
 //    addvmm = %t;
 //    mputl("# VMM 16x16 with shift register",fd_w);
 //    a=1;b=1;c=1;

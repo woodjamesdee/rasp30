@@ -1,5 +1,5 @@
 //************************* VMM_WTA ************************************
-if (blk_name.entries(bl) =='vmmwta') then 
+if (blk_name{bl} =='vmmwta') then 
     addvmm = %t;
     cap_info = cap_info2(cap_info,pass_num,'vw_nfetd', bl)
 

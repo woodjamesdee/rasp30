@@ -1,5 +1,5 @@
 //****************************** CAP ***********************************
-if (blk_name.entries(bl) =='cap') then
+if (blk_name{bl}=='cap') then
     for ss=1:scs_m.objs(bl).model.ipar(1)
         mputl("# cap "+string(bl)+" "+string(scs_m.objs(bl).model.ipar(2))+" "+string(ss),fd_w);
         cap_str = ".subckt cap in[0]=net"+string(blk(blk_objs(bl),2))+"_"+string(ss)+" out[0]=net"+ string(blk(blk_objs(bl),2+numofip))+"_" + string(ss);

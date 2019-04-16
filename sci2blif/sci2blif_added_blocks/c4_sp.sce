@@ -1,5 +1,5 @@
 //**************************** C4 **************************************
-if (blk_name.entries(bl) =='c4_sp') then
+if (blk_name{bl}=='c4_sp') then
     plcvpr=%t
     j=scs_m.objs(blk_objs(bl)).model.ipar(1)
     freq_c=scs_m.objs(blk_objs(bl)).model.rpar'

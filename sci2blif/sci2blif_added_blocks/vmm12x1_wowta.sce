@@ -1,5 +1,5 @@
 //************************* VMM_WTA ************************************
-if (blk_name.entries(bl) =='vmm12x1_wowta') then 
+if (blk_name{bl} =='vmm12x1_wowta') then 
     global shift_number_mismatch
     addvmm = %t;
     plcvpr=%t

@@ -1,5 +1,5 @@
 //***************************** OTA ************************************
-if(blk_name.entries(bl)=='ota')  then
+if(blk_name{bl}=='ota')  then
     for ss=1:scs_m.objs(bl).model.ipar(1)
         mputl("# ota "+string(bl)+" "+string(scs_m.objs(bl).model.ipar(2))+" "+string(ss),fd_w);
         ota_str='.subckt ota in[0]=net' + string(blk(blk_objs(bl),2))+"_" +string(ss)+' in[1]=net'+string(blk(blk_objs(bl),3))+"_" +string(ss)+' out[0]=net'+string(blk(blk_objs(bl),2+numofip))+"_" +string(ss)+" #ota_bias =" + string(sprintf('%e',scs_m.objs(blk_objs(bl)).model.rpar(ss)));

@@ -1,5 +1,5 @@
 //****************************** VMM ***********************************
-if (blk_name.entries(bl) =='vmm_4') then 
+if (blk_name{bl} =='vmm_4') then 
     //disp("VMM block");
     mputl("# VMM",fd_w);
     vmm_str= '.subckt vmm_4x4 ';

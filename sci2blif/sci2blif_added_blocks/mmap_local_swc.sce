@@ -1,5 +1,5 @@
 //**************************** Mismatch map (local swc) ***********************************
-if (blk_name.entries(bl) =='mmap_local_swc') then
+if (blk_name{bl} =='mmap_local_swc') then
     addvmm = %t;
     mputl("# mmap_local_swc",fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)

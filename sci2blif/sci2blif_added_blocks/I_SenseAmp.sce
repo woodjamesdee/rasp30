@@ -1,5 +1,5 @@
 //**************************** I_SenseAmp **********************************
-if (blk_name.entries(bl) == "I_SenseAmp") then
+if (blk_name{bl} == "I_SenseAmp") then
     for ss=1:scs_m.objs(bl).model.ipar(1)
         mputl("# I_SenseAmp "+string(bl)+" "+string(scs_m.objs(bl).model.ipar(2))+" "+string(ss),fd_w);
         sci2blif_str= ".subckt I_SenseAmp"+" in[0]=net"+string(blk(blk_objs(bl),2))+"_"+string(ss)+" in[1]=net"+string(blk(blk_objs(bl),3))+"_"+string(ss)+" out[0]=net"+string(blk(blk_objs(bl),2+numofip))+"_"+string(ss)+" #I_SenseAmp_ls =0"+"&I_SenseAmp_fgota0_ibias ="+string(sprintf('%e',scs_m.objs(bl).model.rpar(scs_m.objs(bl).model.ipar(1)*(1-1)+ss)))+"&I_SenseAmp_fgota0_pbias ="+string(sprintf('%e',scs_m.objs(bl).model.rpar(scs_m.objs(bl).model.ipar(1)*(2-1)+ss)))+"&I_SenseAmp_fgota0_nbias ="+string(sprintf('%e',scs_m.objs(bl).model.rpar(scs_m.objs(bl).model.ipar(1)*(3-1)+ss)))+"&I_SenseAmp_ota0_ibias ="+string(sprintf('%e',scs_m.objs(bl).model.rpar(scs_m.objs(bl).model.ipar(1)*(4-1)+ss)))

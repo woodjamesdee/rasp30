@@ -1,5 +1,5 @@
 //**************************** Counter 8 ******************************
-if (blk_name.entries(bl) =='counter8') then
+if (blk_name{bl}=='counter8') then
     mputl("# counter8",fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)
         counter8_str= ".subckt counter8 clk=net"+string(blk(blk_objs(bl),2))+"_"+string(ss)+" reset=net"+string(blk(blk_objs(bl),3))+"_"+string(ss); 

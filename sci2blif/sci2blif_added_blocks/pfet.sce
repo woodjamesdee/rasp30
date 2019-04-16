@@ -1,5 +1,5 @@
 //****************************** PFET **********************************
-if (blk_name.entries(bl) =='pfet') then
+if (blk_name{bl} =='pfet') then
     for ss=1:scs_m.objs(bl).model.ipar(1)
         mputl("# pfet "+string(bl)+" "+string(scs_m.objs(bl).model.ipar(2))+" "+string(ss),fd_w);
         pfet_str=".subckt pfet in[0]=net"+string(blk(blk_objs(bl),3))+'_'+string(ss)+" in[1]=net" + string(blk(blk_objs(bl),2))+'_'+string(ss)+" out[0]=net"+ string(blk(blk_objs(bl),2+numofip))+'_'+string(ss);

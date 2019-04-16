@@ -1,5 +1,5 @@
 //**************************** OTA Buffer ******************************
-if (blk_name.entries(bl) =='ota_buf') then 
+if (blk_name{bl} =='ota_buf') then 
     for ss=1:scs_m.objs(bl).model.ipar(1)
         mputl("# ota_buf "+string(bl)+" "+string(scs_m.objs(bl).model.ipar(2))+" "+string(ss),fd_w);
         mputl(".subckt ota_buf in[0]=net"+string(blk(blk_objs(bl),2))+ "_" + string(ss)+" out[0]=net"+ string(blk(blk_objs(bl),2+numofip))+ "_" + string(ss)+ " #ota_buf_ls =0&ota_buf_bias =10e-6",fd_w);

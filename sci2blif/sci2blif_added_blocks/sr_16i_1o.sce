@@ -1,5 +1,5 @@
 //*************** Shift register 16inputs 1output **********************
-if (blk_name.entries(bl) =='sr_16i_1o') then
+if (blk_name{bl} =='sr_16i_1o') then
     addvmm = %t;
     plcvpr = %t;
     mputl("# Shift register 16inputs 1output",fd_w);
@@ -24,7 +24,7 @@ end
 
 
 
-//if (blk_name.entries(bl) =='sr_16i_1o') then
+//if (blk_name{bl} =='sr_16i_1o') then
 //sftreg_count=sftreg_count+1;//Sahil added.Cant figure out the best way to handle multiple shift registers which are not vectorized for plcloc
 //    addvmm = %t;
 //    plcvpr = %t;

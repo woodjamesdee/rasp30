@@ -1,5 +1,5 @@
 //************************* TIA ******************************
-if (blk_name.entries(bl) =='TIA') then
+if (blk_name{bl} =='TIA') then
  
     for ss=1:scs_m.objs(bl).model.ipar(1)
     mputl("# TIA",fd_w);

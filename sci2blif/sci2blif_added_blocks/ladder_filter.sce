@@ -1,5 +1,5 @@
 //**************************** Ladder Filter *********yeahbuddy******
-if (blk_name.entries(bl) =='ladder_filter') then
+if (blk_name{bl}=='ladder_filter') then
     ladder_count=ladder_count+1;
     plcvpr = %t;      
     mputl("# Ladder Filter",fd_w);

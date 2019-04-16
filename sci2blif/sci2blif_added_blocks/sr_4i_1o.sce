@@ -1,5 +1,5 @@
 //*************** Shift register 16inputs 1output **********************
-if (blk_name.entries(bl) =='sr_4i_1o') then
+if (blk_name{bl} =='sr_4i_1o') then
     addvmm = %t;
     mputl("# Shift register 4inputs 1output",fd_w);
     sr_4i_1o_str= ".subckt sftreg";

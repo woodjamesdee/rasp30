@@ -1,5 +1,5 @@
 //***** Shift register 1input 16outputs (non vecterized version) *******
-if (blk_name.entries(bl) =='sr_1i_16o_nv') then
+if (blk_name{bl} =='sr_1i_16o_nv') then
     addvmm = %t;
     mputl("# Shift register 1input 16outputs",fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)

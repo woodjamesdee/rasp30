@@ -1,11 +1,11 @@
 //************************** Div BY 2 **********************************
-if (blk_name.entries(bl) =='div2') then
+if (blk_name{bl} =='div2') then
     disp(scs_m.objs(bl).model.opar(1))
     cd(vpr_path);
     //**********************************
     //Writing supporting list file
     //**********************************
-    blname = blk_name.entries(bl);
+    blname = blk_name{bl};
     blkin = length(scs_m.objs(blk(bl,1)).model.in);
     blkout = length(scs_m.objs(blk(bl,1)).model.out);
     prime_ipnet='inputs'; 

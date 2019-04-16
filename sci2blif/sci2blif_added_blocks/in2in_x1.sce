@@ -1,5 +1,5 @@
 //************************ Input2Input x1 ******************************
-if (blk_name.entries(bl) =='in2in_x1') then
+if (blk_name{bl} =='in2in_x1') then
     //addvmm = %t;
     mputl("# Input 2 Input x1",fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)

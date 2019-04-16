@@ -1,5 +1,5 @@
 //**************************** sr_ni_1o **********************************
-if (blk_name.entries(bl) == "sr_ni_1o") then
+if (blk_name{bl} == "sr_ni_1o") then
     mputl("#sr_ni_1o",fd_w);
     sr_ni_1o_str= ".subckt sftreg";
     for ss=1:scs_m.objs(bl).model.ipar(1)

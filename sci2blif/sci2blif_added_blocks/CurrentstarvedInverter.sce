@@ -1,5 +1,5 @@
 //************************* Current Starved Inverter ******************************
-if (blk_name.entries(bl) =='CurrentstarvedInverter') then
+if (blk_name{bl}=='CurrentstarvedInverter') then
     addvmm = %t;
     mputl("# CurrentstarvedInverter",fd_w);
     for ss=1:scs_m.objs(bl).model.ipar(1)

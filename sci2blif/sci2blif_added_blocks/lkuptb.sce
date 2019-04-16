@@ -1,5 +1,5 @@
 //**************************** LOOKUP Table ********************************
-if(blk_name.entries(bl)=='lkuptb')  then
+if(blk_name{bl}=='lkuptb')  then
     disp(scs_m.objs(blk_objs(bl)).model.rpar(1))
     mputl("# LOOKUP Table-> "+scs_m.objs(blk_objs(bl)).model.opar(1),fd_w);
     truecase_ss=strsplit(scs_m.objs(blk_objs(bl)).model.opar(2),";");

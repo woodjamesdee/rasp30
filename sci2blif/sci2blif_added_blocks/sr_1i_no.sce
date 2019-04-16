@@ -1,5 +1,5 @@
 //************** Shift Register 1input (n) outputs ***********************
-if (blk_name.entries(bl) == 'sr_1i_no') then
+if (blk_name{bl} == 'sr_1i_no') then
     addvmm = %t;
     mputl("# Shift register 1input (n) outputs",fd_w);
     sr_1i_no_str= ".subckt sftreg3 in[0]=net"+string(blk(blk_objs(bl),2))+"_1"+" in[1]=net"+string(blk(blk_objs(bl),3))+"_1"+" in[2]=net"+string(blk(blk_objs(bl),4))+"_1"+" in[3]=net"+string(blk(blk_objs(bl),5))+"_1"+" out[0]=net_floated_"+string(internal_number)+" out[1]=net"+string(blk(blk_objs(bl),2+numofip))+"_1"+" out[2]=net"+string(blk(blk_objs(bl),3+numofip))+"_1"+" out[3]=net"+string(blk(blk_objs(bl),4+numofip))+"_1";
