@@ -1,3 +1,3 @@
-if (blk_name.entries(bl) == "inv_mblif") then
+if (blk_name{bl} == "inv_mblif") then
     fix_vdd = 1;
 end
