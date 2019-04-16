@@ -86,8 +86,8 @@ for i =1:no
             if (scs_m.objs(i).gui =='vmm_4') then vmm_ct= vmm_ct+8;
             elseif (scs_m.objs(i).gui =='meas_volt') then mite_adc = 1;
             elseif (scs_m.objs(i).gui =='TIA') then mite_adc = 1;
-            elseif (scs_m.objs(i).gui =='GENARB_f')  then ga_blk_num = ga_blk_num+1; ga_idx(ga_blk_num,1).entries(1,1)=i; ga_idx(ga_blk_num,1).entries(1,2)=size(evstr(scs_m.objs(i).model.opar(1)), "r");
-            elseif (scs_m.objs(i).gui =='gpio_in' | scs_m.objs(i).gui =='gpio_in_fixloc')  then  gpin_blk_num = gpin_blk_num+1; gpin_idx(gpin_blk_num,1).entries(1,1)=i; gpin_idx(gpin_blk_num,1).entries(1,2)=size(evstr(scs_m.objs(i).model.opar(1)), "r");
+            elseif (scs_m.objs(i).gui =='GENARB_f')  then ga_blk_num = ga_blk_num+1; ga_idx(ga_blk_num,1){1,1}=i; ga_idx(ga_blk_num,1){1,2}=size(evstr(scs_m.objs(i).model.opar(1)), "r");
+            elseif (scs_m.objs(i).gui =='gpio_in' | scs_m.objs(i).gui =='gpio_in_fixloc')  then  gpin_blk_num = gpin_blk_num+1; gpin_idx(gpin_blk_num,1){1,1}=i; gpin_idx(gpin_blk_num,1){1,2}=size(evstr(scs_m.objs(i).model.opar(1)), "r");
             elseif (scs_m.objs(i).gui== "vdd_i") then fix_vdd = 1;
             elseif (scs_m.objs(i).gui== "gnd_i") then fix_gnd = 1;
             elseif (scs_m.objs(i).gui== "lkuptb") then
@@ -144,7 +144,7 @@ for m=1:numoflink
             outofblk=scs_m.objs(link_blk(1,m)).from(1,2);
             idx=1+numofip+outofblk;
             if(scs_m.objs(curblk).gui=='SPLIT_f') then                   
-                spl_net=spl_blk(curblk,1).entries;
+                spl_net=spl_blk(curblk,1){};
                 blk(r,idx)=spl_net;
                 split = %t;
                 if pass_num == 1 then
@@ -195,7 +195,7 @@ for m=1:numoflink
             c_fpaa=size(scs_m.objs(curblk).model.sim);
             outblk=scs_m.objs(link_blk(1,m)).from(1,1);
             if(scs_m.objs(curblk).gui=='SPLIT_f') then
-                spl_blk(curblk,1).entries=net;
+                spl_blk(curblk,1){}=net;
                 if pass_num == 1 then
                     cap_info('net'+string(net))(2,1) = 0;
                     spl_src(curblk)= 'net'+string(net);
@@ -232,17 +232,17 @@ pad_in_string="#";
 //prime_ipnet=string(blk(prime_ips(1),2+numofip)); 
 if ga_blk_num ~= 0 then
     for ga = 1:ga_blk_num
-        ga_blk_num2 =ga_idx(ga,1).entries(1,2);
+        ga_blk_num2 =ga_idx(ga,1){1,2};
         for ga2 = 1:ga_blk_num2
-            prime_ip_string=strcat([prime_ip_string," net",string(blk(ga_idx(ga,1).entries(1,1),2+numofip)), "_",string(ga2) ]);
+            prime_ip_string=strcat([prime_ip_string," net",string(blk(ga_idx(ga,1){1,1},2+numofip)), "_",string(ga2) ]);
         end
     end
 end
 if gpin_blk_num ~= 0 then
     for gpin = 1:gpin_blk_num
-        gpin_blk_num2 =gpin_idx(gpin,1).entries(1,2);
+        gpin_blk_num2 =gpin_idx(gpin,1){1,2};
         for gpin2 = 1:gpin_blk_num2
-            prime_ip_string=strcat([prime_ip_string," net",string(blk(gpin_idx(gpin,1).entries(1,1),2+numofip)), "_",string(gpin2) ]);
+            prime_ip_string=strcat([prime_ip_string," net",string(blk(gpin_idx(gpin,1){1,1},2+numofip)), "_",string(gpin2) ]);
         end
     end
 end
@@ -270,19 +270,19 @@ prime_op_string= '.outputs'; //primary o/p string
 pad_out_string="#";
 
 for s=1: length(prime_ops)
-    if blk_name(prime_ops(s)).entries == 'dc_out1' then
+    if blk_name(prime_ops(s)){} == 'dc_out1' then
         for ss=1:scs_m.objs(prime_ops(s)).model.ipar(1)
             prime_op_string= prime_op_string + ' net'+ string(blk(prime_ops(s),2+numofip))+ "_" + string(ss);
         end
-    elseif blk_name(prime_ops(s)).entries == 'pad_in' then
+    elseif blk_name(prime_ops(s)){} == 'pad_in' then
         for ss=1:scs_m.objs(prime_ops(s)).model.ipar(1)
             prime_op_string= prime_op_string + ' net'+ string(blk(prime_ops(s),2+numofip))+ "_" + string(ss);
         end
-//    elseif blk_name(prime_ops(s)).entries == 'adc1' then
+//    elseif blk_name(prime_ops(s)){} == 'adc1' then
 //            prime_op_string= prime_op_string + ' out_adc_1';
-//    elseif blk_name(prime_ops(s)).entries == 'adc2' then
+//    elseif blk_name(prime_ops(s)){} == 'adc2' then
 //            prime_op_string= prime_op_string + ' out_adc_2';
-    elseif blk_name(prime_ops(s)).entries == 'adc_ip' then
+    elseif blk_name(prime_ops(s)){} == 'adc_ip' then
             prime_op_string= prime_op_string + ' out_adc_'+string(adc_ip_net(adc_ip_idx1)); adc_ip_idx1=adc_ip_idx1+1;
     else
         for ss=1:scs_m.objs(prime_ops(s)).model.ipar(1)
@@ -296,7 +296,7 @@ pad_out_string = pad_out_string + " pad_out";
 // adding gnd/vdd as an output
 if mite_adc == 1 then
     for i=1:numofblk
-        if blk_name.entries(i)=='meas_volt' then
+        if blk_name{i}=='meas_volt' then
             if mite_adc_number==0
                 mite_adc_number=1;
                 prime_op_string=strcat([prime_op_string," out_mite_adc_"+string(mite_adc_number)]);
