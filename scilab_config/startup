@@ -15,6 +15,6 @@ then
 fi
 
 
-~/scilab-6.0.2/bin/scilab -f ~/rasp30/sci2blif/rasp_design.sce
+~/scilab-5.5.2/bin/scilab -f ~/rasp30/sci2blif/rasp_design.sce
 
 

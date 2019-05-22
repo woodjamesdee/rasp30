@@ -36,8 +36,10 @@ if file_list ~= [] then
 end
 
 xcosPalAdd(pal1,["FPAA"]);
-xcosPalAdd(pal1_1,["FPAA"]); // ["FPAA" "Level 1 (System) Blocks"]
-xcosPalAdd(pal1_2,["FPAA"]); // ["FPAA" "Level 1 (System) Blocks"]
+xcosPalAdd(pal1_1,["FPAA" "Level 1 (System) Blocks"]);
+xcosPalAdd(pal1_2,["FPAA" "Level 1 (System) Blocks"]);
+//xcosPalAdd(pal1_1,["FPAA"]); // ["FPAA" "Level 1 (System) Blocks"]
+//xcosPalAdd(pal1_2,["FPAA"]); // ["FPAA" "Level 1 (System) Blocks"]
 xcosPalAdd(pal2,["FPAA"]);
 xcosPalAdd(pal3,["FPAA"]);
 xcosPalAdd(pal4,["FPAA" "Input/Output Blocks"]);

@@ -1,3 +1,3 @@
 style.displayedLabel="common_drain_pfet"
-pal1=xcosPalAddBlock(pal1, "common_drain",[],style);
+//pal1=xcosPalAddBlock(pal1, "common_drain",[],style);
 pal1_1=xcosPalAddBlock(pal1_1,"common_drain",[],style);
